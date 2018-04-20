@@ -1,0 +1,31 @@
+dependencies: \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/Libraries/Image/RCTImageView.m \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/Libraries/Image/RCTImageView.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTResizeMode.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTConvert.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTAnimationType.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTBorderStyle.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTDefines.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTLog.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTAssert.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTUtils.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTPointerEvents.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTTextDecorationLineType.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/yoga/Yoga.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/yoga/YGEnums.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/yoga/YGMacros.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTBridge.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTBridgeDelegate.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTJavaScriptLoader.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTBridgeModule.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTFrameUpdate.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTInvalidating.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTEventDispatcher.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTImageSource.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/UIView+React.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTComponent.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/Libraries/Image/RCTImageBlurUtils.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/Libraries/Image/RCTImageLoader.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTURLRequestHandler.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTURLRequestDelegate.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/Libraries/Image/RCTImageUtils.h

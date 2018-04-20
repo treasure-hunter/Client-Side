@@ -1,0 +1,37 @@
+dependencies: \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/Libraries/Text/TextInput/Singleline/RCTSinglelineTextInputViewManager.m \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/Libraries/Text/TextInput/Singleline/RCTSinglelineTextInputViewManager.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/Libraries/Text/TextInput/RCTBaseTextInputViewManager.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/Libraries/Text/BaseText/RCTBaseTextViewManager.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTViewManager.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTBridgeModule.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTDefines.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTConvert.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTAnimationType.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTBorderStyle.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTLog.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTAssert.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTUtils.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTPointerEvents.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTTextDecorationLineType.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/yoga/Yoga.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/yoga/YGEnums.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/yoga/YGMacros.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTEventDispatcher.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTBridge.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTBridgeDelegate.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTJavaScriptLoader.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTFrameUpdate.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTInvalidating.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/UIView+React.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTComponent.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/Libraries/Text/TextInput/RCTBaseTextInputShadowView.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/Libraries/Text/BaseText/RCTBaseTextShadowView.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTShadowView.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTRootView.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/Libraries/Text/RCTTextAttributes.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/Libraries/Text/TextInput/Singleline/RCTSinglelineTextInputView.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/Libraries/Text/TextInput/RCTBaseTextInputView.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphoneos/include/React/RCTView.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/Libraries/Text/TextInput/RCTBackedTextInputDelegate.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/Libraries/Text/TextInput/RCTBackedTextInputViewProtocol.h

@@ -17,44 +17,22 @@ export default class LoginForm extends Component {
           <Text style={{ marginVertical:30, fontSize:36, textAlign:'center', fontFamily:'Didot' }} >
             Let's Find What's Hidden
           </Text>
-          <List>
-            <ListItem>
-              <Button
-                onPress={ () => this.createRoom() }
-                iconLeft rounded style={{ color:'white' }} >
-                <Icon name='home' />
-                <Text>Create Room</Text>
-              </Button>
-            </ListItem>
-            <ListItem>
-              <Button
-                onPress={ () => this.props.toRoomList() }
-                iconLeft rounded style={{ color:'white' }} >
-                <Icon name='people' />
-                <Text>Room List</Text>
-              </Button>
-            </ListItem>
-          </List>
-          {/* <Card>
-            <CardItem>
-              <Button
-              onPress={ () => this.createRoom() }
-              iconLeft rounded style={{ color:'white' }} >
-              <Icon name='home' />
-              <Text>Create Room</Text>
-              </Button>
-             </CardItem>
-          </Card>
-          <Card>
-            <CardItem>
-              <Button
-              onPress={ () => this.props.toRoomList() }
-              iconLeft rounded style={{ color:'white' }} >
-              <Icon name='people' />
-              <Text>Join Room</Text>
-              </Button>
-             </CardItem>
-          </Card> */}
+          <Button
+          iconLeft
+          onPress={ () => this.createRoom() }
+          style={{ alignSelf:'center', marginVertical:10, backgroundColor:'navy' }}
+          >
+          <Icon name='home' />
+          <Text style={{ fontFamily:'futura' }}>Create Quest</Text>
+          </Button>
+          <Button
+          iconLeft
+          onPress={ () => this.props.toRoomList() }
+          style={{ alignSelf:'center', marginVertical:10, backgroundColor:'green' }}
+          >
+          <Icon name='people' />
+          <Text style={{ fontFamily:'futura'}}>Join Quest</Text>
+          </Button>
         </Content>
       </Container>
     );

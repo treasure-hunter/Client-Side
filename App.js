@@ -30,7 +30,7 @@ export default class App extends React.Component {
       <Provider store={ store }>
         <View style={styles.container}>
           {/* <Login /> */}
-          <Nav />
+          <Apps />
         </View>
       </ Provider>
     );
@@ -64,7 +64,7 @@ const HomeStack = StackNavigator({
   initialRouteName: 'Home'
 })
 
-const Nav = SwitchNavigator({
+const Apps = SwitchNavigator({
   AuthStack: {
     screen: AuthStack
   },

@@ -1,8 +1,20 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import { Container, Header, Content, Form, Item, Input, Label, Button, Text } from 'native-base';
+import { connect } from 'react-redux';
+import { Container,
+  Header,
+  Content,
+  Form,
+  Item,
+  Input,
+  Label,
+  Button,
+  Text, 
+  Right,
+  Left,
+} from 'native-base';
+import { Grid, Col, Row } from 'react-native-easy-grid'
 import { auth } from '../firebase/index';
-import { AsyncStorage } from 'react-native';
+import { AsyncStorage, Alert } from 'react-native';
 import { bindActionCreators } from 'redux';
 import axios from 'axios';
 
@@ -27,9 +39,20 @@ export class CreateRoom extends Component {
   }
 
   createRoom = async () => {
+    console.log('creating room...')
     const token = await AsyncStorage.getItem('idToken')
     const { roomName, description, longitude, latitude } = this.state
-    const result = await axios({
+    // const result = await axios({
+    //   method: 'post',
+    //   url: 'http://localhost:3000/treasure/new',
+    //   headers: { token: token },
+    //   data: {
+    //     roomName: roomName,
+    //     description: description,
+    //     treasures: [longitude, latitude],
+    //   }
+    // })
+    axios({
       method: 'post',
       url: 'http://localhost:3000/treasure/new',
       headers: { token: token },
@@ -38,8 +61,12 @@ export class CreateRoom extends Component {
         description: description,
         treasures: [longitude, latitude],
       }
+    }).then((res) => {
+      Alert.alert('Create Room Success')
+      this.resetInput()
+    }).catch((err) => {
+      console.log('err', err)
     })
-    this.resetInput()
   }
 
   getGeolocation = () => {
@@ -102,7 +129,7 @@ export class CreateRoom extends Component {
               <Label>Longitude</Label>
               {
                 (this.state.longitudeTrig) ?
-                <Text style={{ paddingVertical: 10, paddingRight: 20 }}>{ this.state.longitude }</Text> : 
+                <Text style={{ paddingVertical: 15, paddingRight: 20 }}>{ this.state.longitude }</Text> : 
                 <Input
                 editable={ false }
                 autoCapitalize='none'
@@ -116,7 +143,7 @@ export class CreateRoom extends Component {
               <Label>Latitude</Label>
               {
                 (this.state.latitudeTrig) ?
-                <Text style={{ paddingVertical: 10, paddingRight: 20 }}>{ this.state.latitude }</Text> : 
+                <Text style={{ paddingVertical: 15, paddingRight: 20 }}>{ this.state.latitude }</Text> : 
                 <Input
                 editable={ false }
                 autoCapitalize='none'
@@ -126,12 +153,22 @@ export class CreateRoom extends Component {
               }
             </Item>
           </Form>
-          <Button rounded success onPress={ () => this.createRoom() }>
-            <Text>Submit</Text>
-          </Button>
-          <Button rounded success onPress={ () => this.getGeolocation() }>
-            <Text>Get Location</Text>
-          </Button>
+            <Button
+            rounded
+            info
+            style={{ alignSelf:'center', marginVertical:10 }}
+            onPress={ () => this.getGeolocation() }>
+              <Text>Get Location</Text>
+            </Button>
+            { this.state.latitudeTrig && this.state.longitudeTrig &&
+              <Button
+              rounded
+              success
+              style={{ alignSelf:'center', marginVertical:10 }}
+              onPress={ () => this.createRoom() }>
+                <Text>Create</Text>
+              </Button>
+            }
         </Content>
       </Container>
     );
