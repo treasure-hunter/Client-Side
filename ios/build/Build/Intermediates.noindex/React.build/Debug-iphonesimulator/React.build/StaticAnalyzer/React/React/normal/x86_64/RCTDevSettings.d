@@ -1,0 +1,23 @@
+dependencies: \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/React/Modules/RCTDevSettings.mm \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/React/Modules/RCTDevSettings.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JavaScriptCore.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCWrapper.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/React/Base/RCTBridge+Private.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/React/Base/RCTEventDispatcher.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/React/Modules/RCTJSCSamplingProfiler.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/React/DevSupport/RCTPackagerClient.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/React/Profiler/RCTProfile.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/React/DevSupport/RCTPackagerConnection.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/React/DevSupport/RCTInspectorDevServerHelper.h \
+  /Users/adhiarta/Documents/GitHub/final-project/Client-Side/node_modules/react-native/React/Inspector/RCTInspectorPackagerConnection.h
