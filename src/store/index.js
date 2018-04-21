@@ -3,9 +3,11 @@ import logger from 'redux-logger'
 import thunk from 'redux-thunk'
 
 import { authEmail } from './auth/auth-reducers'
+import { fetchQuests } from './quest/quest-reducers'
 
 const reducers = combineReducers({
-  authEmail
+  authEmail,
+  fetchQuests
 })
 
 const store = createStore(
