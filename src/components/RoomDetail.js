@@ -17,7 +17,7 @@ export class RoomDetail extends Component {
           {
             this.props.quests.map((quest, i) => (
               <Card>
-                <CardItem header bordered>
+                <CardItem header bordered button onPress={ () => this.props.toGamePlay() }>
                   <Text>{ quest.roomName }</Text>
                 </CardItem>
                 <CardItem bordered>

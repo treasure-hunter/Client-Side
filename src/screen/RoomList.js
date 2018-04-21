@@ -8,9 +8,13 @@ export default class RoomList extends Component {
     title: `List Room`
   }
 
+  toGamePlay = () => {
+    this.props.navigation.navigate('GamePlay')
+  }
+
   render() {
     return (
-      <RoomDetail />
+      <RoomDetail toGamePlay={ this.toGamePlay }/>
     );
   }
 }
