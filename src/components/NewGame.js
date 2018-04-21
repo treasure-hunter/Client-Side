@@ -1,6 +1,19 @@
 import React, { Component } from 'react';
 import { AsyncStorage } from 'react-native';
-import { Container, Header, Content, Card, CardItem, Text, Icon, Right, Button, List, ListItem } from 'native-base';
+import {
+  Container,
+  Header,
+  Content,
+  Card,
+  CardItem,
+  Text,
+  Icon,
+  Right,
+  Button,
+  List,
+  ListItem,
+  Thumbnail
+ } from 'native-base';
 
 export default class LoginForm extends Component {
   createRoom = async () => {
@@ -17,6 +30,7 @@ export default class LoginForm extends Component {
           <Text style={{ marginVertical:30, fontSize:36, textAlign:'center', fontFamily:'Didot' }} >
             Let's Find What's Hidden
           </Text>
+          <Thumbnail source='../assets/map.png' />
           <Button
           iconLeft
           onPress={ () => this.createRoom() }

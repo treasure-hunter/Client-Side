@@ -8,7 +8,7 @@ import { Container,
   Input,
   Label,
   Button,
-  Text, 
+  Text,
   Right,
   Left,
 } from 'native-base';
@@ -63,11 +63,15 @@ export class CreateRoom extends Component {
         console.log('User tapped custom button: ', res.customButton);
       }
       else {
-        let source = { uri: res.uri };
-    
+        let source = {
+          uri: res.uri,
+          name: res.fileName,
+          type: res.type
+        };
+
         // You can also display the image using data:
         // let source = { uri: 'data:image/jpeg;base64,' + res.data };
-    
+
         this.setState({
           image: source
         });
@@ -85,6 +89,7 @@ export class CreateRoom extends Component {
     formData.append('longitude', this.state.longitude)
     formData.append('latitude', this.state.latitude)
 
+
     return formData
   }
 
@@ -94,13 +99,13 @@ export class CreateRoom extends Component {
     console.log('form>>>', formData)
     const token = await AsyncStorage.getItem('idToken')
     const { roomName, description, longitude, latitude } = this.state
-    axios.post('http://localhost:3000/treasure/new', formData, {
+    axios.post('https://fancy-to-do.appspot.com/treasure/new', formData, {
       headers: { token: token }
     })
     .then((res) => {
-      console.log('res>>', res)
+      console.log('res>>>>>>>>>>>>>>>>>>', res)
     }).catch((err) => {
-      console.log(err)
+      console.log('masuk errorrr', err)
     })
   }
 
@@ -165,7 +170,7 @@ export class CreateRoom extends Component {
               <Label>Longitude</Label>
               {
                 (this.state.longitudeTrig) ?
-                <Text style={{ paddingVertical: 15, paddingRight: 20 }}>{ this.state.longitude }</Text> : 
+                <Text style={{ paddingVertical: 15, paddingRight: 20 }}>{ this.state.longitude }</Text> :
                 <Input
                 editable={ false }
                 autoCapitalize='none'
@@ -179,7 +184,7 @@ export class CreateRoom extends Component {
               <Label>Latitude</Label>
               {
                 (this.state.latitudeTrig) ?
-                <Text style={{ paddingVertical: 15, paddingRight: 20 }}>{ this.state.latitude }</Text> : 
+                <Text style={{ paddingVertical: 15, paddingRight: 20 }}>{ this.state.latitude }</Text> :
                 <Input
                 editable={ false }
                 autoCapitalize='none'

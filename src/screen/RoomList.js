@@ -61,6 +61,7 @@ export default class RoomList extends Component {
             this.state.rooms.map(room => (
               <ListItem>
                 <Text>{ room.data.roomName }</Text>
+                <Button />
               </ListItem>
             ))
           }
@@ -69,4 +70,3 @@ export default class RoomList extends Component {
     );
   }
 }
-
