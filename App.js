@@ -4,11 +4,14 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Provider } from 'react-redux'
 import { SwitchNavigator, StackNavigator } from 'react-navigation'
 import { auth  } from './src/firebase/index'
+
 import Home from './src/screen/Home';
 import Register from './src/screen/Register';
 import Login from './src/screen/Login';
 import CreateRoom from './src/screen/CreateRoom';
 import RoomList from './src/screen/RoomList';
+import GamePlay from './src/screen/GamePlay'
+
 import store from './src/store/index'
 
 export default class App extends React.Component {
@@ -60,6 +63,9 @@ const Apps = SwitchNavigator({
   },
   HomeStack: {
     screen: HomeStack
+  },
+  GamePlay: {
+    screen: GamePlay
   }
 },{
   initialRouteName: 'AuthStack'
