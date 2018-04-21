@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
+import LinearGradient from 'react-native-linear-gradient';
 import LoginCard from '../components/LoginCard'
 import NewGame from '../components/NewGame'
 
@@ -18,18 +18,11 @@ export default class Home extends Component {
 
   render() {
     return (
-      <Container>
-        <Content>
-          <NewGame toCreateRoom={ this.toCreateRoom } toRoomList={ this.toRoomList }/>
-        </Content>
-        <Footer>
-          <FooterTab>
-            <Button full>
-              <Text>2018</Text>
-            </Button>
-          </FooterTab>
-        </Footer>
-      </Container>
+      <LinearGradient
+      colors={['#3E073E', '#210E3A']}
+      style={{ flex: 1, alignItems: 'center' }} >
+        <NewGame toCreateRoom={ this.toCreateRoom } toRoomList={ this.toRoomList }/>
+      </LinearGradient>
     );
   }
 }
