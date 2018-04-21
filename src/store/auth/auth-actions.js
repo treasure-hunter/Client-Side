@@ -6,7 +6,7 @@ export const loginwithEmail = (email, password, cb) => {
   return async dispatch => {
     dispatch(loading())
     try {
-      const user = await auth.signInWithEmailAndPassword(email.toLowerCase(), password)
+      const user = await auth.signInWithEmailAndPassword(email.trim().toLowerCase(), password)
       const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true)
       await AsyncStorage.setItem('idToken', idToken)
       dispatch(loginSucces(idToken))
@@ -21,7 +21,7 @@ export const registerwithEmail = (username, email, password, cb) => {
   return async dispatch => {
     dispatch(loading())
     try {
-      await auth.createUserWithEmailAndPassword(email.toLocaleLowerCase(), password)
+      await auth.createUserWithEmailAndPassword(email.trim().toLocaleLowerCase(), password)
       const user = auth.currentUser
       user.updateProfile({
         displayName: username
