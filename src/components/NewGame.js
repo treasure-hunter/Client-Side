@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
 import { View, Text, AsyncStorage, TouchableOpacity } from 'react-native';
 import {
-  Container,
-  Header,
-  Content,
-  Card,
-  CardItem,
   Icon,
-  Right,
-  Button,
   List,
   ListItem,
+  Right,
+  Left,
   Thumbnail
  } from 'native-base';
 import LinearGradient from 'react-native-linear-gradient';
+import { Col, Row, Grid } from "react-native-easy-grid";
 
 export default class LoginForm extends Component {
   createRoom = async () => {
@@ -26,33 +22,49 @@ export default class LoginForm extends Component {
   render() {
     return (
       <View>
-        <View style={{ flex: .9, justifyContent: 'center' }}>
-          <View>
-            <Text style={{ fontSize:33, textAlign:'center', fontFamily:'Didot', color: '#F1F1F4' }} >
+        <View style={{ flex: .9 }}>
+          <View style={{ marginTop: 120, alignItems: 'center' }}>
+            <Text style={{ fontSize:33, textAlign:'center', fontFamily:'Didot', color: '#F1F1F4', alignSelf: 'center' }} >
               Let's Find What's Hidden
             </Text>
           </View>
-          <View>
-            <Thumbnail source='../assets/map.png' />
+          <Grid style={{ alignItems: 'center' }}>
+            <Col style={{ marginHorizontal: 5 }}>
+              <TouchableOpacity
+              iconLeft
+              onPress={ () => this.createRoom() }
+              style={{ paddingVertical: 5, borderRadius: 10, backgroundColor: '#F1F1F4', alignContent: 'center' }}>
+                <Icon name='home' style={{ alignSelf: 'center' }}/>
+                <Text style={{ fontFamily:'futura', alignSelf: 'center' }}>Create Quest</Text>
+              </TouchableOpacity>
+            </Col>
+            <Col style={{ marginHorizontal: 5 }}>
+              <TouchableOpacity
+              iconLeft
+              onPress={ () => this.props.toRoomList() }
+              style={{ paddingVertical: 5, borderRadius: 10, backgroundColor: '#F1F1F4', alignContent: 'center' }}>
+                <Icon name='people' style={{ alignSelf: 'center' }} />
+                <Text style={{ fontFamily:'futura', alignSelf: 'center' }}>Join Quest</Text>
+              </TouchableOpacity>
+            </Col>
+          </Grid>
+          {/* <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <TouchableOpacity
             iconLeft
             onPress={ () => this.createRoom() }
-            style={{ marginBottom: 13, paddingVertical: 10, alignSelf:'center', width: '50%', borderRadius: 10, backgroundColor: '#F1F1F4', alignItems: 'center' }}
-            >
-            <Icon name='home' />
-            <Text style={{ fontFamily:'futura' }}>Create Quest</Text>
+            style={{ width: '', borderRadius: 10, backgroundColor: '#F1F1F4', alignContent: 'center' }}>
+              <Icon name='home' />
+              <Text style={{ fontFamily:'futura' }}>Create Quest</Text>
             </TouchableOpacity>
-          </View>
-          <View>
+            <Left />
             <TouchableOpacity
             iconLeft
             onPress={ () => this.props.toRoomList() }
-            style={{ paddingVertical: 10, alignSelf:'center', width: '50%', borderRadius: 10, backgroundColor: '#F1F1F4', alignItems: 'center' }}
-            >
-            <Icon name='people' />
-            <Text style={{ fontFamily:'futura'}}>Join Quest</Text>
+            style={{ borderRadius: 10, backgroundColor: '#F1F1F4', alignContent: 'center' }}>
+              <Icon name='people' />
+              <Text style={{ fontFamily:'futura'}}>Join Quest</Text>
             </TouchableOpacity>
-          </View>
+          </View> */}
         </View>
         <View style={{ flex: .1, alignItems: 'center' }}>
           <Text style={{ color: '#F1F1F4', marginHorizontal: 5, fontWeight: '900' }}>2018</Text>
