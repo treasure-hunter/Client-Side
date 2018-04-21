@@ -3,6 +3,7 @@ import { REGISTER, LOGIN_WITH_EMAIL, CHECK_LOADING, LOGIN_SUCCESS, CHECK_ERROR, 
 const initialState = {
   loading: false,
   error: false,
+  errorData: null,
   status: false,
   email: '',
   password: '',
@@ -33,7 +34,8 @@ export const authEmail = (state= { ...initialState }, action) => {
     case CHECK_ERROR:
       return {
         ...state,
-        error: true
+        error: true,
+        errorData: action.payload
       }
     default:
       return state;

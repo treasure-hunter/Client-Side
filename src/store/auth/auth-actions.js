@@ -12,7 +12,7 @@ export const loginwithEmail = (email, password, cb) => {
       dispatch(loginSucces(idToken))
       cb()
     } catch (err) {
-      dispatch(checkErr())
+      dispatch(checkErr(err))
     }
   }
 }
@@ -31,7 +31,7 @@ export const registerwithEmail = (username, email, password, cb) => {
       })
       cb()
     } catch (err) {
-      dispatch(checkErr())
+      dispatch(checkErr(err))
     }
   }
 }
@@ -49,8 +49,9 @@ function loading() {
   }
 }
 
-function checkErr() {
+function checkErr(payload) {
   return {
-    type: CHECK_ERROR
+    type: CHECK_ERROR,
+    payload
   }
 }
