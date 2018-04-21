@@ -4,7 +4,6 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Provider } from 'react-redux'
 import { SwitchNavigator, StackNavigator } from 'react-navigation'
 import { auth  } from './src/firebase/index'
-import Auth from './src/screen/Auth';
 import Home from './src/screen/Home';
 import Register from './src/screen/Register';
 import Login from './src/screen/Login';
@@ -32,9 +31,6 @@ export default class App extends React.Component {
 }
 
 const AuthStack = StackNavigator({
-  Auth: {
-    screen: Auth
-  },
   Register: {
     screen: Register
   },
