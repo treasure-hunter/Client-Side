@@ -9,6 +9,7 @@ import { Container,
   Label,
   Button,
   Spinner,
+  View,
   Text } from 'native-base';
 import { auth } from '../firebase/index';
 import { AsyncStorage } from 'react-native'
@@ -51,6 +52,9 @@ export class Login extends Component {
   render() {
     return (
       <Container>
+        <Text style={{ marginVertical:30, fontSize:36, textAlign:'center', fontFamily:'Didot' }} >
+          Let's Find What's Hidden
+        </Text>
         {
           this.props.authEmail.loading ?
           <Content>
@@ -78,9 +82,21 @@ export class Login extends Component {
                 onChangeText={(password) => this.setState({password}) }/>
               </Item>
             </Form>
-            <Button rounded success onPress={ () => this.onSignIn() }>
-              <Text>Login</Text>
-            </Button>
+              <Button
+              style={{ marginVertical:5, alignSelf:'center' }}
+              rounded
+              success
+              onPress={ () => this.onSignIn() }>
+                <Text>Login</Text>
+              </Button>
+              {/* <Text style={{ marginVertical:10 }}>Don't have an account yet?</Text> */}
+              <Button
+              style={{ marginVertical:5, alignSelf:'center' }}
+              rounded
+              success
+              onPress={ () => this.props.navigation.navigate('Register') }>
+                <Text>Register</Text>
+              </Button>
           </Content>
         }
       </Container>

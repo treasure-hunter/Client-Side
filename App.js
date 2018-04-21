@@ -10,16 +10,10 @@ import Register from './src/screen/Register';
 import Login from './src/screen/Login';
 import CreateRoom from './src/screen/CreateRoom';
 import RoomList from './src/screen/RoomList';
-// import RNSimpleCompass from 'react-native-simple-compass';
 import store from './src/store/index'
 
 export default class App extends React.Component {
   componentDidMount() {
-    // console.log(RNSimpleCompass)
-    // RNSimpleCompass.start(3, (degree) => {
-    //   console.log(degree)
-    //   RNSimpleCompass.stop()
-    // })
     auth.onAuthStateChanged((user) => {
       console.log('user signed')
     })
@@ -48,7 +42,7 @@ const AuthStack = StackNavigator({
     screen: Login
   }
 },{
-  initialRouteName: 'Auth'
+  initialRouteName: 'Login'
 })
 const HomeStack = StackNavigator({
   Home: {

@@ -14,7 +14,8 @@ import { Container,
 } from 'native-base';
 import { Grid, Col, Row } from 'react-native-easy-grid'
 import { auth } from '../firebase/index';
-import { AsyncStorage, Alert } from 'react-native';
+import { showImagePicker } from 'react-native-image-picker'
+import { AsyncStorage, Alert, TouchableOpacity } from 'react-native';
 import { bindActionCreators } from 'redux';
 import axios from 'axios';
 
@@ -28,6 +29,7 @@ export class CreateRoom extends Component {
       description: '',
       longitude: '',
       latitude: '',
+      image: '',
       hint: '',
       latitudeTrig: false,
       longitudeTrig: false
@@ -38,34 +40,67 @@ export class CreateRoom extends Component {
     title: `Create Room`
   }
 
+  selectPhotoTapped = () => {
+    const options = {
+      quality: 1.0,
+      maxWidth: 500,
+      maxHeight: 500,
+      storageOptions: {
+        skipBackup: true
+      }
+    }
+
+    showImagePicker(options, (res) => {
+      console.log('response =>', res)
+
+      if (res.didCancel) {
+        console.log('User cancelled image picker');
+      }
+      else if (res.error) {
+        console.log('ImagePicker Error: ', res.error);
+      }
+      else if (res.customButton) {
+        console.log('User tapped custom button: ', res.customButton);
+      }
+      else {
+        let source = { uri: res.uri };
+    
+        // You can also display the image using data:
+        // let source = { uri: 'data:image/jpeg;base64,' + res.data };
+    
+        this.setState({
+          image: source
+        });
+      }
+    })
+  }
+
+  createFormData = () => {
+    let formData = new FormData()
+
+    formData.append('roomName', this.state.roomName)
+    formData.append('description', this.state.description)
+    formData.append('hint', this.state.hint)
+    formData.append('image', this.state.image)
+    formData.append('longitude', this.state.longitude)
+    formData.append('latitude', this.state.latitude)
+
+    return formData
+  }
+
   createRoom = async () => {
     console.log('creating room...')
+    let formData = this.createFormData()
+    console.log('form>>>', formData)
     const token = await AsyncStorage.getItem('idToken')
     const { roomName, description, longitude, latitude } = this.state
-    // const result = await axios({
-    //   method: 'post',
-    //   url: 'http://localhost:3000/treasure/new',
-    //   headers: { token: token },
-    //   data: {
-    //     roomName: roomName,
-    //     description: description,
-    //     treasures: [longitude, latitude],
-    //   }
-    // })
-    axios({
-      method: 'post',
-      url: 'http://localhost:3000/treasure/new',
-      headers: { token: token },
-      data: {
-        roomName: roomName,
-        description: description,
-        treasures: [longitude, latitude],
-      }
-    }).then((res) => {
-      Alert.alert('Create Room Success')
-      this.resetInput()
+    axios.post('http://localhost:3000/treasure/new', formData, {
+      headers: { token: token }
+    })
+    .then((res) => {
+      console.log('res>>', res)
     }).catch((err) => {
-      console.log('err', err)
+      console.log(err)
     })
   }
 
@@ -87,6 +122,7 @@ export class CreateRoom extends Component {
     this.setState({
       roomName: '',
       description: '',
+      image: '',
       longitude: '',
       latitude: '',
       hint: ''
@@ -159,6 +195,13 @@ export class CreateRoom extends Component {
             style={{ alignSelf:'center', marginVertical:10 }}
             onPress={ () => this.getGeolocation() }>
               <Text>Get Location</Text>
+            </Button>
+            <Button
+            rounded
+            info
+            style={{ alignSelf:'center', marginVertical:10 }}
+            onPress={ () => this.selectPhotoTapped() }>
+              <Text>Take Picture</Text>
             </Button>
             { this.state.latitudeTrig && this.state.longitudeTrig &&
               <Button
