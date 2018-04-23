@@ -279,28 +279,12 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
-<<<<<<< HEAD
 		9E1FBF41208B501B00FC6BC7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F592C43270AD446FA1081677 /* RNSimpleCompass.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = RNSimpleCompass;
-=======
-		86BBC4F2208B30A500D08E9E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7F9DDBA34C52426B9A311F8A /* BVLinearGradient.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 134814201AA4EA6300B7C361;
-			remoteInfo = BVLinearGradient;
-		};
-		86BBC4F4208B30A500D08E9E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7F9DDBA34C52426B9A311F8A /* BVLinearGradient.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 64AA15081EF7F30100718508;
-			remoteInfo = "BVLinearGradient-tvOS";
->>>>>>> 9b6ded8fd97dc3fc0a369bd9a32984840186dfe6
 		};
 		9E43DEED2089B0CD003E0BEC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
