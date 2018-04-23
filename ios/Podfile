@@ -1,0 +1,25 @@
+platform :ios, '9.3'
+target 'carta' do
+  use_frameworks!
+  pod 'ViroReact', :path => '../node_modules/react-viro/ios/'
+  pod 'ViroKit', :path => '../node_modules/react-viro/ios/dist/ViroRenderer/'
+  pod 'AWSAutoScaling'
+  pod 'AWSCloudWatch'
+  pod 'AWSCognito'
+  pod 'AWSCognitoIdentityProvider'
+  pod 'AWSDynamoDB'
+  pod 'AWSEC2'
+  pod 'AWSElasticLoadBalancing'
+  pod 'AWSIoT'
+  pod 'AWSKinesis'
+  pod 'AWSLambda'
+  pod 'AWSMachineLearning'
+  pod 'AWSMobileAnalytics'
+  pod 'AWSS3'
+  pod 'AWSSES'
+  pod 'AWSSimpleDB'
+  pod 'AWSSNS'
+  pod 'AWSSQS'
+  pod 'RNViewShot', :path => '../node_modules/react-native-view-shot'
+
+end

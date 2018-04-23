@@ -1,0 +1,146 @@
+PODS:
+  - AWSAutoScaling (2.6.16):
+    - AWSCore (= 2.6.16)
+  - AWSCloudWatch (2.6.16):
+    - AWSCore (= 2.6.16)
+  - AWSCognito (2.6.16):
+    - AWSCore (= 2.6.16)
+  - AWSCognitoIdentityProvider (2.6.16):
+    - AWSCognitoIdentityProviderASF (= 1.0.1)
+    - AWSCore (= 2.6.16)
+  - AWSCognitoIdentityProviderASF (1.0.1)
+  - AWSCore (2.6.16)
+  - AWSDynamoDB (2.6.16):
+    - AWSCore (= 2.6.16)
+  - AWSEC2 (2.6.16):
+    - AWSCore (= 2.6.16)
+  - AWSElasticLoadBalancing (2.6.16):
+    - AWSCore (= 2.6.16)
+  - AWSIoT (2.6.16):
+    - AWSCore (= 2.6.16)
+  - AWSKinesis (2.6.16):
+    - AWSCore (= 2.6.16)
+  - AWSLambda (2.6.16):
+    - AWSCore (= 2.6.16)
+  - AWSMachineLearning (2.6.16):
+    - AWSCore (= 2.6.16)
+  - AWSMobileAnalytics (2.6.16):
+    - AWSCore (= 2.6.16)
+  - AWSS3 (2.6.16):
+    - AWSCore (= 2.6.16)
+  - AWSSES (2.6.16):
+    - AWSCore (= 2.6.16)
+  - AWSSimpleDB (2.6.16):
+    - AWSCore (= 2.6.16)
+  - AWSSNS (2.6.16):
+    - AWSCore (= 2.6.16)
+  - AWSSQS (2.6.16):
+    - AWSCore (= 2.6.16)
+  - GoogleToolboxForMac/Defines (2.1.0)
+  - GoogleToolboxForMac/Logger (2.1.0):
+    - GoogleToolboxForMac/Defines (= 2.1.0)
+  - GTMSessionFetcher/Core (1.1.6)
+  - GVRAudioSDK (1.120.0)
+  - GVRSDK (1.120.0):
+    - GoogleToolboxForMac/Logger (= 2.1.0)
+    - GTMSessionFetcher/Core (= 1.1.6)
+  - React (0.11.0):
+    - React/Core (= 0.11.0)
+  - React/Core (0.11.0)
+  - RNViewShot (2.3.0):
+    - React
+  - ViroKit (1.0):
+    - AWSDynamoDB (~> 2.6.7)
+    - GVRAudioSDK (= 1.120.0)
+    - GVRSDK (= 1.120.0)
+  - ViroReact (1.0)
+
+DEPENDENCIES:
+  - AWSAutoScaling
+  - AWSCloudWatch
+  - AWSCognito
+  - AWSCognitoIdentityProvider
+  - AWSDynamoDB
+  - AWSEC2
+  - AWSElasticLoadBalancing
+  - AWSIoT
+  - AWSKinesis
+  - AWSLambda
+  - AWSMachineLearning
+  - AWSMobileAnalytics
+  - AWSS3
+  - AWSSES
+  - AWSSimpleDB
+  - AWSSNS
+  - AWSSQS
+  - RNViewShot (from `../node_modules/react-native-view-shot`)
+  - ViroKit (from `../node_modules/react-viro/ios/dist/ViroRenderer/`)
+  - ViroReact (from `../node_modules/react-viro/ios/`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AWSAutoScaling
+    - AWSCloudWatch
+    - AWSCognito
+    - AWSCognitoIdentityProvider
+    - AWSCognitoIdentityProviderASF
+    - AWSCore
+    - AWSDynamoDB
+    - AWSEC2
+    - AWSElasticLoadBalancing
+    - AWSIoT
+    - AWSKinesis
+    - AWSLambda
+    - AWSMachineLearning
+    - AWSMobileAnalytics
+    - AWSS3
+    - AWSSES
+    - AWSSimpleDB
+    - AWSSNS
+    - AWSSQS
+    - GoogleToolboxForMac
+    - GTMSessionFetcher
+    - GVRAudioSDK
+    - GVRSDK
+    - React
+
+EXTERNAL SOURCES:
+  RNViewShot:
+    :path: "../node_modules/react-native-view-shot"
+  ViroKit:
+    :path: "../node_modules/react-viro/ios/dist/ViroRenderer/"
+  ViroReact:
+    :path: "../node_modules/react-viro/ios/"
+
+SPEC CHECKSUMS:
+  AWSAutoScaling: 4d716a0eae164c08174fd08e8cd379e870d3c59d
+  AWSCloudWatch: a9f5a6dc861ae1d34eaa31828950a067ca8b3195
+  AWSCognito: 459ff17ab8aea9a19d57f2c9051cd124e10ef90d
+  AWSCognitoIdentityProvider: d09869af8aafbf4b802000613056e2107e17fbac
+  AWSCognitoIdentityProviderASF: f94f1a502e72ef3d0a1de93e10bf7a79c8698118
+  AWSCore: 314df68684e338310409c6a3b050e28932deb6ff
+  AWSDynamoDB: aa8b7cd8510080e22d9aa2a282077bb295fdb741
+  AWSEC2: d37b7bb9ca3efe441c35b006b313a9e047f1b165
+  AWSElasticLoadBalancing: 68e1a689c2468baae8ebde38162ec35288dad863
+  AWSIoT: 5c54aa21bf42cca17bd283987ff044e3b0cd0b8d
+  AWSKinesis: bff297ea7068f68fe7f948f911e255fb46748b1e
+  AWSLambda: 1890bb5b223958a0f57ba5070be3f786dfa65d25
+  AWSMachineLearning: 3e76d799f957fc10245137462e66f17d487d89c9
+  AWSMobileAnalytics: 52b47121ce3fb0b624511ef2dec50d2b01412f98
+  AWSS3: 218b24bc68387f0c715fd37168f9db6cbec9d0a7
+  AWSSES: 4e103f3434411ea6e938cc9a8eaa4c4b15ce42a1
+  AWSSimpleDB: 7d23782f82897dba615822c3b74113ea39c9786b
+  AWSSNS: 982e3325a594e128894dbbfc0bbace8654c2946f
+  AWSSQS: 871aa9acfa2794c70a52af569ef2fec67ec68de2
+  GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
+  GTMSessionFetcher: 6aacd0ab48ddf0c3633ab2642d792abfcad1b08a
+  GVRAudioSDK: 302f0a8f190d855868ea07f246ce4f9b44c392ae
+  GVRSDK: 0cb9d0ce06a84d698e61e3db9509766022dcf815
+  React: ab1a2e21deb34965c38328d5ec40cc7d12c6050a
+  RNViewShot: fdf9a64f0621ebc4e7c3392a10d2ffb70a7faee4
+  ViroKit: 9631f301ef6a3f56116b23d6aac5d5c2307aa368
+  ViroReact: 5520f26ac4654e361786c82da3b29ce0402c3c00
+
+PODFILE CHECKSUM: f3d218c7ab84c69c3dfbcd8905fb194eb8e73edf
+
+COCOAPODS: 1.5.0
