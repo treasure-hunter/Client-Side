@@ -1486,6 +1486,7 @@ babel-types@^6.18.0, babel-types@^6.19.0, babel-types@^6.24.1, babel-types@^6.26
     to-fast-properties "^1.0.3"
 
 "babylon7@npm:babylon@^7.0.0-beta", babylon@7.0.0-beta.44:
+  name babylon7
   version "7.0.0-beta.44"
   resolved "https://registry.yarnpkg.com/babylon/-/babylon-7.0.0-beta.44.tgz#89159e15e6e30c5096e22d738d8c0af8a0e8ca1d"
 
@@ -2078,6 +2079,12 @@ ecc-jsbn@~0.1.1:
   resolved "https://registry.yarnpkg.com/ecc-jsbn/-/ecc-jsbn-0.1.1.tgz#0fc73a9ed5f0d53c38193398523ef7e543777505"
   dependencies:
     jsbn "~0.1.0"
+
+ecef-projector@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/ecef-projector/-/ecef-projector-1.0.1.tgz#4f435be87fc2815c5d8358e7ab20e4a6948b6bb8"
+  dependencies:
+    wgs84 "0.0.0"
 
 ee-first@1.1.1:
   version "1.1.1"
@@ -4553,6 +4560,10 @@ react-native-easy-grid@0.1.17, react-native-easy-grid@^0.1.17:
   dependencies:
     lodash "^4.11.1"
 
+react-native-geolocation-service@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/react-native-geolocation-service/-/react-native-geolocation-service-1.0.4.tgz#02ca4ddec147ed4cb0c4cc8106eb7c6f00708818"
+
 react-native-image-picker@^0.26.7:
   version "0.26.7"
   resolved "https://registry.yarnpkg.com/react-native-image-picker/-/react-native-image-picker-0.26.7.tgz#ad2ee957f7f6cc01396893ea03d84cb2adb2e376"
@@ -4578,6 +4589,10 @@ react-native-safe-area-view@^0.7.0:
   dependencies:
     hoist-non-react-statics "^2.3.1"
 
+react-native-simple-compass@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-simple-compass/-/react-native-simple-compass-1.0.0.tgz#ac60ff5e060c800941ff5c0432120b2986a8a69a"
+
 "react-native-tab-view@github:react-navigation/react-native-tab-view":
   version "0.0.74"
   resolved "https://codeload.github.com/react-navigation/react-native-tab-view/tar.gz/36ebd834d78b841fc19778c966465d02fd1213bb"
@@ -4599,6 +4614,10 @@ react-native-vector-icons@~4.5.0:
     lodash "^4.0.0"
     prop-types "^15.5.10"
     yargs "^8.0.2"
+
+react-native-view-shot@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/react-native-view-shot/-/react-native-view-shot-2.3.0.tgz#ac01880d3c560f0dc918cd7cdf8854c6ff85ca31"
 
 react-native@0.54.0-rc.3:
   version "0.54.0-rc.3"
@@ -4719,6 +4738,12 @@ react-tween-state@^0.1.5:
   dependencies:
     raf "^3.1.0"
     tween-functions "^1.0.1"
+
+react-viro@2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/react-viro/-/react-viro-2.6.0.tgz#2853af7929d8755a91501733f07f24195d034947"
+  dependencies:
+    prop-types "^15.5.10"
 
 react@16.3.0-alpha.1:
   version "16.3.0-alpha.1"
@@ -5717,6 +5742,10 @@ websocket-driver@>=0.5.1:
 websocket-extensions@>=0.1.1:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.3.tgz#5d2ff22977003ec687a4b87073dfbbac146ccf29"
+
+wgs84@0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/wgs84/-/wgs84-0.0.0.tgz#34fdc555917b6e57cf2a282ed043710c049cdc76"
 
 whatwg-encoding@^1.0.1, whatwg-encoding@^1.0.3:
   version "1.0.3"

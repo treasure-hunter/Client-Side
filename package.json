@@ -1,5 +1,5 @@
 {
-  "name": "Client-Side",
+  "name": "carta",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
@@ -9,6 +9,7 @@
     "react-test-renderer": "16.3.0-alpha.1"
   },
   "scripts": {
+    "prestart": "./node_modules/react-viro/bin/run_ngrok.sh",
     "start": "react-native start",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
@@ -19,16 +20,21 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "ecef-projector": "^1.0.1",
     "firebase": "^4.13.0",
     "native-base": "^2.4.2",
     "react": "16.3.0-alpha.1",
     "react-native": "0.54.0-rc.3",
     "react-native-easy-grid": "^0.1.17",
+    "react-native-geolocation-service": "^1.0.4",
     "react-native-image-picker": "^0.26.7",
     "react-native-picker": "^4.3.5",
+    "react-native-simple-compass": "^1.0.0",
     "react-native-vector-icons": "^4.6.0",
+    "react-native-view-shot": "^2.3.0",
     "react-navigation": "^1.5.11",
     "react-redux": "^5.0.7",
+    "react-viro": "2.6.0",
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0"

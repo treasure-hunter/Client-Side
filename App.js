@@ -10,7 +10,8 @@ import Register from './src/screen/Register';
 import Login from './src/screen/Login';
 import CreateRoom from './src/screen/CreateRoom';
 import RoomList from './src/screen/RoomList';
-import GamePlay from './src/screen/GamePlay'
+import GamePlay from './src/screen/GamePlay';
+import AR from './src/screen/ARScene2';
 
 import store from './src/store/index'
 
@@ -64,8 +65,8 @@ const Apps = SwitchNavigator({
   HomeStack: {
     screen: HomeStack
   },
-  GamePlay: {
-    screen: GamePlay
+  AR: {
+    screen: AR
   }
 },{
   initialRouteName: 'AuthStack'

@@ -40,8 +40,8 @@ export class Login extends Component {
 
   resetInput = () => {
     this.setState({
-      email: '',
-      password: ''
+      email: 'new@mail.com',
+      password: '123456'
     })
   }
 

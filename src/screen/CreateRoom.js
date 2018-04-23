@@ -104,6 +104,9 @@ export class CreateRoom extends Component {
     })
     .then((res) => {
       console.log('res>>>>>>>>>>>>>>>>>>', res)
+      Alert.alert('Create Quest Success')
+      this.resetInput()
+      this.props.navigation.navigate('Home')
     }).catch((err) => {
       console.log('masuk errorrr', err)
     })

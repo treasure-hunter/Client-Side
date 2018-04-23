@@ -9,7 +9,8 @@ export default class RoomList extends Component {
   }
 
   toGamePlay = () => {
-    this.props.navigation.navigate('GamePlay')
+    console.log('testing masuk sini')
+    this.props.navigation.navigate('AR')
   }
 
   render() {
