@@ -4,8 +4,8 @@ import {  View, Text, } from 'react-native';
 export default class Winner extends Component {
   render() {
     return (
-      <View style={{ flex: 1 }}>
-        <Text style={{ fontSize: 40 }}> textInComponent </Text>
+      <View style={{ flex: 1, justifyContent:'center' }}>
+        <Text style={{ fontSize: 40 }}> Congrats you have won!!! </Text>
       </View>
     );
   }

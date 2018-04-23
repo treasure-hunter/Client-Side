@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 
-import {StyleSheet} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 
 import {
   ViroARScene,
@@ -11,7 +11,8 @@ import {
   ViroBox,
   Viro3DObject,
   ViroMaterials,
-  ViroAnimations
+  ViroAnimations,
+  ViroSound
 } from 'react-viro';
 
 import Geolocation from 'react-native-geolocation-service'
@@ -148,6 +149,16 @@ export class HelloWorldSceneAR extends Component {
     )
   }
 
+  volumeDistance = () => {
+    if (this.state.distance <= 15) {
+      return 0.8
+    } else {
+      0.4
+    }
+  }
+
+
+
   render() {
     return (
       <ViroARScene onTrackingUpdated={this._onInitialized} >
@@ -162,6 +173,10 @@ export class HelloWorldSceneAR extends Component {
             type="OBJ"
             animation={{name: "rotate", run: true, loop: true}}/>
         }
+        <ViroSound
+          source={require("./res/wkwk.mp3")}
+          loop={true}
+          volume={this.volumeDistance()}/>
       </ViroARScene>
     );
   }

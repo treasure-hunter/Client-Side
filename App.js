@@ -41,6 +41,9 @@ const AuthStack = StackNavigator({
   },
   Login: {
     screen: Login
+  },
+  Home: {
+    screen: Home
   }
 },{
   initialRouteName: 'Login'
