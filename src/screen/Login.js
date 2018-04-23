@@ -9,7 +9,7 @@ import {
   Spinner,
   Text } from 'native-base';
 import { auth } from '../firebase/index';
-import { AsyncStorage, StyleSheet, TouchableOpacity, View, Image } from 'react-native'
+import { AsyncStorage, StyleSheet, TouchableOpacity, View, Image, Alert } from 'react-native'
 import { bindActionCreators } from 'redux'
 
 import { loginwithEmail } from '../store/auth/auth-actions'
@@ -30,15 +30,19 @@ export class Login extends Component {
   onSignIn = () => {
     const { email, password } = this.state
     this.props.loginwithEmail(email, password, () => {
-      this.loginSuccess()
+      if(this.props.authEmail.error) {
+        Alert.alert('Incorrect email or password')
+      } else {
+        this.loginSuccess()
+      }
     })
     this.resetInput()
   }
 
   resetInput = () => {
     this.setState({
-      email: 'new@mail.com',
-      password: '123456'
+      email: '',
+      password: ''
     })
   }
 
@@ -52,7 +56,7 @@ export class Login extends Component {
         <View>
           <Image source={require('../asset/Logov2.png')} style={{ width: 150, height: 170, alignSelf: 'center' }}></Image>
           {
-            this.props.authEmail.loading ?
+            this.props.authEmail.loading && !this.props.authEmail.error ?
             <View>
               <Spinner color="white" />
             </View>

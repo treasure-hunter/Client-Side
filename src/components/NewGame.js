@@ -26,7 +26,7 @@ export default class LoginForm extends Component {
             <Image source={require('../asset/Logov2.png')} style={{ width: 150, height: 170, alignSelf: 'center' }}></Image>
           </View>
           <Grid style={{ alignItems: 'center' }}>
-            <Col style={{ width: 130, marginVertical: 5 }}>
+            <Col style={{ width: 130, marginHorizontal: 5 }}>
               <TouchableOpacity
               iconLeft
               onPress={ () => this.createRoom() }
@@ -35,7 +35,7 @@ export default class LoginForm extends Component {
                 <Text style={{ fontFamily:'futura', alignSelf: 'center' }}>Create Quest</Text>
               </TouchableOpacity>
             </Col>
-            <Col style={{ width: 130, marginVertical: 5 }}>
+            <Col style={{ width: 130, marginHorizontal: 5 }}>
               <TouchableOpacity
               iconLeft
               onPress={ () => this.props.toRoomList() }

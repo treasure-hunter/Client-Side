@@ -13,6 +13,7 @@ export const loginwithEmail = (email, password, cb) => {
       cb()
     } catch (err) {
       dispatch(checkErr(err))
+      cb()
     }
   }
 }
@@ -32,6 +33,17 @@ export const registerwithEmail = (username, email, password, cb) => {
       cb()
     } catch (err) {
       dispatch(checkErr(err))
+    }
+  }
+}
+
+export const signOut = () => {
+  return async dispatch => {
+    try {
+      await auth.signOut()
+      await AsyncStorage.removeItem('idToken')
+    } catch (err) {
+      console.log(err.message)
     }
   }
 }

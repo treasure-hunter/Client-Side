@@ -16,13 +16,15 @@ export const authEmail = (state= { ...initialState }, action) => {
     case CHECK_LOADING:
       return {
         ...state,
-        loading: true
+        loading: true,
+        error: false
       }
     case LOGIN_SUCCESS:
       return {
         ...state,
         token: action.payload,
         loading: false,
+        error: false,
         status: true
       }
     case REGISTER_SUCCESS:
@@ -34,6 +36,7 @@ export const authEmail = (state= { ...initialState }, action) => {
     case CHECK_ERROR:
       return {
         ...state,
+        loading: false,
         error: true,
         errorData: action.payload
       }
