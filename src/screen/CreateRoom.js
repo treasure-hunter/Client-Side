@@ -15,7 +15,7 @@ import { Container,
 import { Grid, Col, Row } from 'react-native-easy-grid'
 import { auth } from '../firebase/index';
 import { showImagePicker } from 'react-native-image-picker'
-import { AsyncStorage, Alert, TouchableOpacity } from 'react-native';
+import { AsyncStorage, Alert, TouchableOpacity, View } from 'react-native';
 import { bindActionCreators } from 'redux';
 import axios from 'axios';
 
@@ -141,89 +141,92 @@ export class CreateRoom extends Component {
 
   render() {
     return (
-      <Container>
-        <Content style={{ paddingHorizontal:20 }}>
-          <Form style={{ paddingVertical:20 }}>
-            <Item fixedLabel last rounded style={{ marginVertical:10, backgroundColor:'white' }}>
-              <Label>Room Name</Label>
-              <Input
-              autoCapitalize='none'
-              name="roomName"
-              value={ this.state.roomName }
-              onChangeText={(roomName) => this.setState({roomName}) }
-              />
-            </Item>
-            <Item fixedLabel last rounded style={{ marginVertical:10, backgroundColor:'white' }}>
-              <Label>Description</Label>
-              <Input
-              autoCapitalize='none'
-              name="description"
-              value={ this.state.description }
-              onChangeText={(description) => this.setState({description}) }
-              />
-            </Item>
-            <Item fixedLabel last rounded style={{ marginVertical:10, backgroundColor:'white' }}>
-              <Label>Hint</Label>
-              <Input
-              autoCapitalize='none'
-              name="description"
-              value={ this.state.hint }
-              onChangeText={(hint) => this.setState({hint}) }
-              />
-            </Item>
-            <Item fixedLabel last rounded style={{ marginVertical:10, backgroundColor:'white' }}>
-              <Label>Longitude</Label>
-              {
-                (this.state.longitudeTrig) ?
-                <Text style={{ paddingVertical: 15, paddingRight: 20 }}>{ this.state.longitude }</Text> :
+      <View
+      style={{ flex: 1, backgroundColor: '#210E3A' }} >
+        <Container>
+          <Content style={{ paddingHorizontal:20 }}>
+            <Form style={{ paddingVertical:20 }}>
+              <Item fixedLabel last rounded style={{ marginVertical:10, backgroundColor:'#B1AEC4', borderRadius: 10 }}>
+                <Label style={{ fontFamily: 'futura', fontWeight: '500' }}>Room Name</Label>
                 <Input
-                editable={ false }
                 autoCapitalize='none'
-                name="longitude"
-                value={ this.state.longitude }
-                onChangeText={(longitude) => this.setState({longitude}) }
+                name="roomName"
+                value={ this.state.roomName }
+                onChangeText={(roomName) => this.setState({roomName}) }
                 />
-              }
-            </Item>
-            <Item fixedLabel last rounded style={{ marginVertical:10, backgroundColor:'white' }}>
-              <Label>Latitude</Label>
-              {
-                (this.state.latitudeTrig) ?
-                <Text style={{ paddingVertical: 15, paddingRight: 20 }}>{ this.state.latitude }</Text> :
+              </Item>
+              <Item fixedLabel last rounded style={{ marginVertical:10, backgroundColor:'#B1AEC4', borderRadius: 10 }}>
+                <Label style={{ fontFamily: 'futura', fontWeight: '500' }}>Description</Label>
                 <Input
-                editable={ false }
                 autoCapitalize='none'
-                name="latitude"
-                value={ this.state.latitude }
-                onChangeText={(latitude) => this.setState({latitude}) }/>
-              }
-            </Item>
-          </Form>
-            <Button
-            rounded
-            info
-            style={{ alignSelf:'center', marginVertical:10 }}
-            onPress={ () => this.getGeolocation() }>
-              <Text>Get Location</Text>
-            </Button>
-            <Button
-            rounded
-            info
-            style={{ alignSelf:'center', marginVertical:10 }}
-            onPress={ () => this.selectPhotoTapped() }>
-              <Text>Take Picture</Text>
-            </Button>
-            { this.state.latitudeTrig && this.state.longitudeTrig &&
-              <Button
+                name="description"
+                value={ this.state.description }
+                onChangeText={(description) => this.setState({description}) }
+                />
+              </Item>
+              <Item fixedLabel last rounded style={{ marginVertical:10, backgroundColor:'#B1AEC4', borderRadius: 10 }}>
+                <Label style={{ fontFamily: 'futura', fontWeight: '500' }}>Hint</Label>
+                <Input
+                autoCapitalize='none'
+                name="description"
+                value={ this.state.hint }
+                onChangeText={(hint) => this.setState({hint}) }
+                />
+              </Item>
+              <Item fixedLabel last rounded style={{ marginVertical:10, backgroundColor:'#B1AEC4', borderRadius: 10 }}>
+                <Label style={{ fontFamily: 'futura', fontWeight: '500' }}>Longitude</Label>
+                {
+                  (this.state.longitudeTrig) ?
+                  <Text style={{ paddingVertical: 15, paddingRight: 20 }}>{ this.state.longitude }</Text> :
+                  <Input
+                  editable={ false }
+                  autoCapitalize='none'
+                  name="longitude"
+                  value={ this.state.longitude }
+                  onChangeText={(longitude) => this.setState({longitude}) }
+                  />
+                }
+              </Item>
+              <Item fixedLabel last rounded style={{ marginVertical:10, backgroundColor:'#B1AEC4', borderRadius: 10 }}>
+                <Label style={{ fontFamily: 'futura', fontWeight: '500' }}>Latitude</Label>
+                {
+                  (this.state.latitudeTrig) ?
+                  <Text style={{ paddingVertical: 15, paddingRight: 20 }}>{ this.state.latitude }</Text> :
+                  <Input
+                  editable={ false }
+                  autoCapitalize='none'
+                  name="latitude"
+                  value={ this.state.latitude }
+                  onChangeText={(latitude) => this.setState({latitude}) }/>
+                }
+              </Item>
+            </Form>
+              <TouchableOpacity
               rounded
-              success
-              style={{ alignSelf:'center', marginVertical:10 }}
-              onPress={ () => this.createRoom() }>
-                <Text>Create</Text>
-              </Button>
-            }
-        </Content>
-      </Container>
+              info
+              style={{ marginVertical: 5, paddingVertical: 10, alignSelf:'center', width: '50%', borderRadius: 10, backgroundColor: '#F1F1F4', alignItems: 'center' }}
+              onPress={ () => this.getGeolocation() }>
+                <Text style={{ fontFamily: 'futura', fontWeight: 'bold', color: '#3E073E', textAlign: 'center' }}>Get Location</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+              rounded
+              info
+              style={{ marginVertical: 5, paddingVertical: 10, alignSelf:'center', width: '50%', borderRadius: 10, backgroundColor: '#F1F1F4', alignItems: 'center' }}
+              onPress={ () => this.selectPhotoTapped() }>
+                <Text style={{ fontFamily: 'futura', fontWeight: 'bold', color: '#3E073E', textAlign: 'center' }}>Take Picture</Text>
+              </TouchableOpacity>
+              { this.state.latitudeTrig && this.state.longitudeTrig &&
+                <TouchableOpacity
+                rounded
+                success
+                style={{ marginVertical: 5, paddingVertical: 10, alignSelf:'center', width: '50%', borderRadius: 10, backgroundColor: '#F1F1F4', alignItems: 'center' }}
+                onPress={ () => this.createRoom() }>
+                  <Text style={{ fontFamily: 'futura', fontWeight: 'bold', color: '#3E073E', textAlign: 'center' }}>Create</Text>
+                </TouchableOpacity>
+              }
+          </Content>
+        </Container>
+      </View>
     );
   }
 }

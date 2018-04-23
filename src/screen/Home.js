@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
+import { View } from 'react-native'
 import LoginCard from '../components/LoginCard'
 import NewGame from '../components/NewGame'
 
@@ -11,25 +11,17 @@ export default class Home extends Component {
   toCreateRoom = () => {
     this.props.navigation.navigate('CreateRoom')
   }
-  
+
   toRoomList = () => {
     this.props.navigation.navigate('RoomList')
   }
 
   render() {
     return (
-      <Container>
-        <Content>
-          <NewGame toCreateRoom={ this.toCreateRoom } toRoomList={ this.toRoomList }/>
-        </Content>
-        <Footer>
-          <FooterTab>
-            <Button full>
-              <Text>2018</Text>
-            </Button>
-          </FooterTab>
-        </Footer>
-      </Container>
+      <View
+      style={{ flex: 1, alignItems: 'center', backgroundColor: '#210E3A' }} >
+        <NewGame toCreateRoom={ this.toCreateRoom } toRoomList={ this.toRoomList }/>
+      </View>
     );
   }
 }

@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Container,
+import {
   Header,
-  Content,
   Form,
   Item,
   Input,
   Label,
-  Button,
   Spinner,
-  View,
   Text } from 'native-base';
 import { auth } from '../firebase/index';
-import { AsyncStorage } from 'react-native'
+import { AsyncStorage, StyleSheet, TouchableOpacity, View, Image } from 'react-native'
 import { bindActionCreators } from 'redux'
 
 import { loginwithEmail } from '../store/auth/auth-actions'
@@ -27,7 +24,7 @@ export class Login extends Component {
   }
 
   static navigationOptions = {
-    title: `Login`
+    title: `Carta`
   }
 
   onSignIn = () => {
@@ -51,55 +48,52 @@ export class Login extends Component {
 
   render() {
     return (
-      <Container>
-        <Text style={{ marginVertical:30, fontSize:36, textAlign:'center', fontFamily:'Didot' }} >
-          Let's Find What's Hidden
-        </Text>
-        {
-          this.props.authEmail.loading ?
-          <Content>
-            <Spinner color="blue" />
-          </Content>
-           : 
-          <Content style={{ paddingHorizontal:20 }}>
-            <Form style={{ paddingVertical:20 }}>
-              <Item fixedLabel last rounded style={{ marginVertical:10, backgroundColor:'white' }}>
-                <Label>Email</Label>
-                <Input
-                autoCapitalize='none'
-                name="email"
-                value={ this.state.email }
-                onChangeText={(email) => this.setState({email}) }
-                />
-              </Item>
-              <Item fixedLabel last rounded style={{ marginVertical:10, backgroundColor:'white' }}>
-                <Label>Password</Label>
-                <Input
-                secureTextEntry={true}
-                name="password"
-                type="password"
-                value={ this.state.password }
-                onChangeText={(password) => this.setState({password}) }/>
-              </Item>
-            </Form>
-              <Button
-              style={{ marginVertical:5, alignSelf:'center' }}
-              rounded
+      <View style={{ flex: 1, justifyContent: 'space-around', alignItems: 'center', backgroundColor: '#210E3A' }}>
+        <View>
+          <Image source={require('../asset/Logov2.png')} style={{ width: 150, height: 170, alignSelf: 'center' }}></Image>
+          {
+            this.props.authEmail.loading ?
+            <View>
+              <Spinner color="white" />
+            </View>
+            :
+            <View>
+              <Form style={{ paddingVertical:20 }}>
+                <Item fixedLabel last style={{ marginVertical:10, backgroundColor:'#B1AEC4', borderRadius: 10, width: '100%' }}>
+                  <Label style={{ fontFamily: 'futura', fontWeight: '500' }}>Email</Label>
+                  <Input
+                  autoCapitalize='none'
+                  name="email"
+                  value={ this.state.email }
+                  onChangeText={(email) => this.setState({email}) }
+                  />
+                </Item>
+                <Item fixedLabel last style={{ marginVertical:10, backgroundColor:'#B1AEC4', borderRadius: 10, width: '100%' }}>
+                  <Label style={{ fontFamily: 'futura', fontWeight: '500' }}>Password</Label>
+                  <Input
+                  secureTextEntry={true}
+                  name="password"
+                  type="password"
+                  value={ this.state.password }
+                  onChangeText={(password) => this.setState({password}) }/>
+                </Item>
+              </Form>
+              <TouchableOpacity
+              style={{ paddingVertical: 10, alignSelf:'center', width: '50%', borderRadius: 10, backgroundColor: '#F1F1F4', alignItems: 'center' }}
               success
               onPress={ () => this.onSignIn() }>
-                <Text>Login</Text>
-              </Button>
-              {/* <Text style={{ marginVertical:10 }}>Don't have an account yet?</Text> */}
-              <Button
-              style={{ marginVertical:5, alignSelf:'center' }}
-              rounded
-              success
-              onPress={ () => this.props.navigation.navigate('Register') }>
-                <Text>Register</Text>
-              </Button>
-          </Content>
-        }
-      </Container>
+                <Text style={{ fontFamily: 'futura', fontWeight: 'bold', color: '#3E073E', textAlign: 'center' }}>SIGN IN</Text>
+              </TouchableOpacity>
+              <View style={{ flexDirection: 'row', marginVertical: 15, alignSelf: 'center' }}>
+                <Text style={{ fontFamily: 'futura', color: '#F1F1F4', marginHorizontal: 5, fontWeight: '500' }}>Don't have an account yet?</Text>
+                <Text
+                  style={{ fontFamily: 'futura', color: '#F1F1F4', fontWeight: '500', textDecorationLine: 'underline' }}
+                  onPress={ () => this.props.navigation.navigate('Register') }>Register</Text>
+              </View>
+            </View>
+          }
+        </View>
+      </View>
     );
   }
 }
@@ -111,5 +105,11 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => bindActionCreators ({
   loginwithEmail
 }, dispatch)
+
+var styles = StyleSheet.create({
+  text: {
+    color: '#D8D6E1'
+  },
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

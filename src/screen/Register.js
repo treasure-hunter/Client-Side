@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Container, Header, Content, Form, Item, Input, Label, Button, Text } from 'native-base';
-import { StyleSheet } from 'react-native';
+import { Form, Item, Input, Label, Spinner } from 'native-base';
+import { View, Text, StyleSheet, Alert, TouchableOpacity } from 'react-native';
 import { db, auth } from '../firebase/index'
-import { Alert } from 'react-native'
 import firebase from 'firebase'
 import { bindActionCreators } from 'redux'
 
@@ -24,10 +23,10 @@ export class Register extends Component {
   }
 
   onRegister = () => {
-    const {username, email, password} = this.state 
+    const {username, email, password} = this.state
     this.props.registerwithEmail(username, email, password, () => {
       Alert.alert('Register Succes')
-      this.props.navigation.navigate('Auth')
+      this.props.navigation.navigate('Login')
     })
 
     this.resetInput()
@@ -43,45 +42,56 @@ export class Register extends Component {
 
   render() {
     return (
-      <Container>
-        {
-          this.props.authEmail.loading ?
-          <Text>Please wait..</Text>
-          :
-          <Content style={{ paddingHorizontal:20 }}>
-            <Form style={{ paddingVertical:20 }}>
-            <Item fixedLabel last rounded style={ styles.questionForm }>
-                <Label>Username</Label>
-                <Input
-                name="username"
-                autoCapitalize='none'
-                value={ this.state.username }
-                onChangeText={(username) => this.setState({username}) }/>
-              </Item>
-              <Item fixedLabel last rounded style={ styles.questionForm }>
-                <Label>Email</Label>
-                <Input
-                name="email"
-                autoCapitalize='none'
-                value={ this.state.email }
-                onChangeText={(email) => this.setState({email}) }/>
-              </Item>
-              <Item fixedLabel last rounded style={ styles.questionForm }>
-                <Label>Password</Label>
-                <Input
-                name="password"
-                secureTextEntry={ true }
-                type="password"
-                value={ this.state.password }
-                onChangeText={(password) => this.setState({password}) }/>
-              </Item>
-            </Form>
-            <Button rounded success onPress={ () => this.onRegister() }>
-              <Text>Register</Text>
-            </Button>
-          </Content>
-        }
-      </Container>
+      <View
+      style={{ flex: 1, justifyContent: 'space-around', alignItems: 'center', backgroundColor: '#210E3A' }} >
+        <View>
+          <Text style={{ fontSize:33, textAlign:'center', fontFamily:'Didot', color: '#F1F1F4' }} >
+            Register
+          </Text>
+          {
+            this.props.authEmail.loading ?
+            <View>
+              <Spinner color="white" />
+            </View>
+            :
+            <View style={{ paddingHorizontal:20 }}>
+              <Form style={{ paddingVertical:20 }}>
+                <Item fixedLabel last style={ styles.questionForm }>
+                  <Label style={{ fontFamily: 'futura', fontWeight: '500' }}>Username</Label>
+                  <Input
+                  name="username"
+                  autoCapitalize='none'
+                  value={ this.state.username }
+                  onChangeText={(username) => this.setState({username}) }/>
+                </Item>
+                <Item fixedLabel last style={ styles.questionForm }>
+                  <Label style={{ fontFamily: 'futura', fontWeight: '500' }}>Email</Label>
+                  <Input
+                  name="email"
+                  autoCapitalize='none'
+                  value={ this.state.email }
+                  onChangeText={(email) => this.setState({email}) }/>
+                </Item>
+                <Item fixedLabel last rounded style={ styles.questionForm }>
+                  <Label style={{ fontFamily: 'futura', fontWeight: '500' }}>Password</Label>
+                  <Input
+                  name="password"
+                  secureTextEntry={ true }
+                  type="password"
+                  value={ this.state.password }
+                  onChangeText={(password) => this.setState({password}) }/>
+                </Item>
+              </Form>
+              <TouchableOpacity
+              style={{ paddingVertical: 10, alignSelf:'center', width: '50%', borderRadius: 10, backgroundColor: '#F1F1F4', alignItems: 'center' }}
+              success
+              onPress={ () => this.onRegister() }>
+                <Text style={{ fontFamily: 'futura', fontWeight: 'bold', color: '#3E073E', textAlign: 'center' }}>REGISTER</Text>
+              </TouchableOpacity>
+            </View>
+          }
+        </View>
+      </View>
     );
   }
 }
@@ -89,7 +99,9 @@ export class Register extends Component {
 const styles = StyleSheet.create({
   questionForm: {
     marginVertical:10,
-    backgroundColor:'white'
+    width: 300,
+    backgroundColor:'#B1AEC4',
+    borderRadius: 10
   },
 })
 
