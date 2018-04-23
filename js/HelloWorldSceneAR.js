@@ -162,10 +162,6 @@ export class HelloWorldSceneAR extends Component {
             type="OBJ"
             animation={{name: "rotate", run: true, loop: true}}/>
         }
-        {
-          this.props.latitude &&
-          <ViroText text={this.props.latitude} scale={[.5, .5, .5]} position={[0, 0, -1]} />
-        }
       </ViroARScene>
     );
   }
