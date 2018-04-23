@@ -46,7 +46,9 @@ export class CreateRoom extends Component {
       maxWidth: 500,
       maxHeight: 500,
       storageOptions: {
-        skipBackup: true
+        skipBackup: true,
+        cameraRoll: true,
+        waitUntilSaved: true,
       }
     }
 
@@ -66,7 +68,7 @@ export class CreateRoom extends Component {
         let source = {
           uri: res.uri,
           name: res.fileName,
-          type: res.type
+          type: 'image/jpeg'
         };
 
         // You can also display the image using data:

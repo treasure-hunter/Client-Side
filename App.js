@@ -12,6 +12,7 @@ import CreateRoom from './src/screen/CreateRoom';
 import RoomList from './src/screen/RoomList';
 import GamePlay from './src/screen/GamePlay';
 import AR from './src/screen/ARScene2';
+import Winner from './src/screen/Winner'
 
 import store from './src/store/index'
 
@@ -67,6 +68,9 @@ const Apps = SwitchNavigator({
   },
   AR: {
     screen: AR
+  },
+  Winner: {
+    screen: Winner
   }
 },{
   initialRouteName: 'AuthStack'

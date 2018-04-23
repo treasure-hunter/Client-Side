@@ -14,6 +14,7 @@ import {
   ListItem,
   Thumbnail
  } from 'native-base';
+ import Image from 'react-native';
 
 export default class LoginForm extends Component {
   createRoom = async () => {
@@ -27,6 +28,7 @@ export default class LoginForm extends Component {
     return (
       <Container style={{ backgroundColor:'#fff' }} >
         <Content style={{ padding:16 }}>
+
           <Text style={{ marginVertical:30, fontSize:36, textAlign:'center', fontFamily:'Didot' }} >
             Let's Find What's Hidden
           </Text>

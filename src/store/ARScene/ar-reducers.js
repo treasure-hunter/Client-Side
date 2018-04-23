@@ -1,7 +1,10 @@
-import { FETCH_DISTANCE } from '../actionTypes'
+import { FETCH_DISTANCE, FETCH_POSITION } from '../actionTypes'
 
 const initialState = {
-  distance: null
+  distance: null,
+  latitude: null,
+  longitude: null,
+  image_path: null
 }
 
 export const fetchAction = (state = { ...initialState }, action) => {
@@ -11,6 +14,13 @@ export const fetchAction = (state = { ...initialState }, action) => {
       return {
         ...state,
         distance: action.payload
+      }
+    case FETCH_POSITION:
+      return {
+        ...state,
+        latitude: action.payload.latitude,
+        longitude: action.payload.longitude,
+        image_path: action.payload.image_path
       }
     default:
       return state;

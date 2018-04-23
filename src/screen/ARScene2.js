@@ -7,6 +7,7 @@ import {
   PixelRatio,
   TouchableHighlight,
   Image,
+  Button
 } from 'react-native';
 
 import {
@@ -15,16 +16,22 @@ import {
 } from 'react-viro';
 
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchPosition } from '../store/ARScene/ar-action'
+
 
 
 var sharedProps = {
   apiKey:"61B4DBB3-170C-4515-B297-B388A9C75C61",
 }
 
-// Sets the default scene you want for AR and VR
-var InitialARScene = require('../../js/HelloWorldSceneAR');
 
-export default class ViroSample extends Component {
+
+// Sets the default scene you want for AR and VR
+// var InitialARScene = require('../../js/HelloWorldSceneAR');/
+import InitialARScene from '../../js/HelloWorldSceneAR'
+
+export class ViroSample extends Component {
   constructor() {
     super();
 
@@ -35,10 +42,12 @@ export default class ViroSample extends Component {
   }
 
   render() {
-      return this._getARNavigator()
+
+    return this._getARNavigator()
   }
 
   // Returns the ViroARSceneNavigator which will start the AR experience
+
   _getARNavigator() {
     return (
       <View collapsable={false} style={{ flex: 1 }}>
@@ -46,22 +55,51 @@ export default class ViroSample extends Component {
           style={{ flex: 1 }}
           initialScene={{scene: InitialARScene}}
         />
-      <View style={{ position:"absolute", left: 0, right: 0, top: 60, alignItems: 'center' }}>
-        <Text style={{ height: 70, width: 400, color: '#ffffff', backgroundColor: '#000000', borderRadius: 10 }}>
-          { this.props.fetchDistance.distance }
-        </Text>
-      </View>
+        <View style={{ position:"absolute", left: 0, right: 0, top: 60, alignItems: 'center' }}>
+          <Text style={{ color: '#ffffff', fontSize: 25 }}>
+            { this.props.fetchAction.distance } meters
+          </Text>
+        </View>
         <View style={{ position:"absolute", left: 0, right: 0, bottom: 77, alignItems: 'center' }}>
           {
-            (this.props.fetchDistance.distance <= 10) ?
+            (this.props.fetchAction.distance <= 10) ?
             (
               <TouchableHighlight
                 style={{ height: 80, width: 80, paddingTop: 20, paddingBottom: 20, marginVertical: 10, backgroundColor: '#00000000', borderRadius: 10, borderColor: '#ffffff00' }}
-                underlayColor={'#ffffff00'}>
+                underlayColor={'#ffffff00'}
+                onPress={ () => this.props.navigation.navigate('Winner') }
+              >
                 <Image source={require("../../js/res/CamButton.png")}/>
               </TouchableHighlight>
             )
-            : (<TouchableHighlight />)
+            : (
+              <View>
+                <Text
+                  style={{ fontSize: 25, color: '#FF2B5E'}}
+                  >Too Far away</Text>
+                  <Button
+                  title='back'
+                  onPress={ () => this.props.navigation.goBack() }
+                  />
+              </View>
+              )
+          }
+        </View>
+        <View style={{ position:"absolute", left: 0, right: 15, bottom: 77, alignItems: 'flex-end' }}>
+          {
+            (this.props.fetchAction.distance <= 10) ?
+            (
+              <Image
+              style={{width: 70, height: 125}}
+              source={{uri: this.props.image_path}}
+              />
+            )
+            :
+            (
+              <View>
+                <Text> </Text>
+              </View>
+            )
           }
         </View>
       </View>
@@ -126,7 +164,9 @@ var localStyles = StyleSheet.create({
 });
 
 const mapStateToProps = state => ({
-  fetchDistance: state.fetchDistance
+  fetchAction: state.fetchAction,
+  image_path: state.fetchAction.image_path
 })
+
 
 export default connect(mapStateToProps, null)(ViroSample)

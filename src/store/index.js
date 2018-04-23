@@ -4,12 +4,12 @@ import thunk from 'redux-thunk'
 
 import { authEmail } from './auth/auth-reducers'
 import { fetchQuests } from './quest/quest-reducers'
-import { fetchDistance } from './ARScene/ar-reducers'
+import { fetchAction } from './ARScene/ar-reducers'
 
 const reducers = combineReducers({
   authEmail,
   fetchQuests,
-  fetchDistance
+  fetchAction
 })
 
 const store = createStore(

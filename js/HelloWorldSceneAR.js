@@ -21,10 +21,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { setDistance } from '../src/store/ARScene/ar-action'
 
-
-
-
-export default class HelloWorldSceneAR extends Component {
+export class HelloWorldSceneAR extends Component {
 
   constructor() {
     super();
@@ -53,15 +50,15 @@ export default class HelloWorldSceneAR extends Component {
 
   getCoordinate = () => {
     const userxyz = projector.project(this.state.latitude, this.state.longitude, 0.0);
-    const objectxyz = projector.project(-6.260719, 106.781616, 0.0)
+    const objectxyz = projector.project(Number(this.props.latitude), Number(this.props.longitude), 0.0)
     if (this.state.count < 1) {
       this.distanceLocation(userxyz, objectxyz)
     }
-    const distance = this.getDistance(this.state.latitude, this.state.longitude, -6.260719, 106.781616)
+    const distance = this.getDistance(this.state.latitude, this.state.longitude, Number(this.props.latitude), Number(this.props.longitude))
     this.setState({
       distance: distance
     }, () => {
-      this.props.getDistance(distance)
+      this.props.setDistance(distance)
     })
   }
 
@@ -156,21 +153,18 @@ export default class HelloWorldSceneAR extends Component {
       <ViroARScene onTrackingUpdated={this._onInitialized} >
         {
           this.state.xSel && this.state.ySel && this.state.zSel &&
-          <ViroBox position={[this.state.xSel, this.state.ySel, this.state.zSel]} scale={[3, 3, 3]} materials={["grid"]} animation={{name: "rotate", run: true, loop: true}}/>
-        }
-        {
-          this.state.xSel && this.state.ySel && this.state.zSel &&
           <Viro3DObject
             source={require('./res/btn_close.obj')}
             position={[this.state.xSel, this.state.ySel+1, this.state.zSel]}
-            scale={[3, 3, 3]}
+            scale={[4, 4, 4]}
+            rotation={[90, 0, 0]}
             materials={["grid"]}
             type="OBJ"
             animation={{name: "rotate", run: true, loop: true}}/>
         }
         {
-          this.state.degree && this.state.xSel && this.state.ySel && this.state.zSel &&
-          <ViroText text={String(this.state.distance)} scale={[5, 5, 5]} position={[this.state.xSel, -2, this.state.zSel]} style={styles.helloWorldTextStyle} />
+          this.props.latitude &&
+          <ViroText text={this.props.latitude} scale={[.5, .5, .5]} position={[0, 0, -1]} />
         }
       </ViroARScene>
     );
@@ -212,10 +206,15 @@ ViroAnimations.registerAnimations({
   },
 })
 
+const mapStateToProps = (state) => ({
+  latitude: state.fetchAction.latitude,
+  longitude: state.fetchAction.longitude,
+  image_path: state.fetchAction.image_path
+})
 
 
 const mapDispatchToProps = (dispatch) => bindActionCreators ({
   setDistance
 }, dispatch)
 
-export default connect(null, mapDispatchToProps)(HelloWorldSceneAR)
+export default connect(mapStateToProps, mapDispatchToProps)(HelloWorldSceneAR)

@@ -20,6 +20,4 @@ target 'carta' do
   pod 'AWSSimpleDB'
   pod 'AWSSNS'
   pod 'AWSSQS'
-  pod 'RNViewShot', :path => '../node_modules/react-native-view-shot'
-
 end

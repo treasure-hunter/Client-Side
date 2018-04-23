@@ -44,11 +44,6 @@ PODS:
   - GVRSDK (1.120.0):
     - GoogleToolboxForMac/Logger (= 2.1.0)
     - GTMSessionFetcher/Core (= 1.1.6)
-  - React (0.11.0):
-    - React/Core (= 0.11.0)
-  - React/Core (0.11.0)
-  - RNViewShot (2.3.0):
-    - React
   - ViroKit (1.0):
     - AWSDynamoDB (~> 2.6.7)
     - GVRAudioSDK (= 1.120.0)
@@ -73,7 +68,6 @@ DEPENDENCIES:
   - AWSSimpleDB
   - AWSSNS
   - AWSSQS
-  - RNViewShot (from `../node_modules/react-native-view-shot`)
   - ViroKit (from `../node_modules/react-viro/ios/dist/ViroRenderer/`)
   - ViroReact (from `../node_modules/react-viro/ios/`)
 
@@ -102,11 +96,8 @@ SPEC REPOS:
     - GTMSessionFetcher
     - GVRAudioSDK
     - GVRSDK
-    - React
 
 EXTERNAL SOURCES:
-  RNViewShot:
-    :path: "../node_modules/react-native-view-shot"
   ViroKit:
     :path: "../node_modules/react-viro/ios/dist/ViroRenderer/"
   ViroReact:
@@ -136,11 +127,9 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 6aacd0ab48ddf0c3633ab2642d792abfcad1b08a
   GVRAudioSDK: 302f0a8f190d855868ea07f246ce4f9b44c392ae
   GVRSDK: 0cb9d0ce06a84d698e61e3db9509766022dcf815
-  React: ab1a2e21deb34965c38328d5ec40cc7d12c6050a
-  RNViewShot: fdf9a64f0621ebc4e7c3392a10d2ffb70a7faee4
   ViroKit: 9631f301ef6a3f56116b23d6aac5d5c2307aa368
   ViroReact: 5520f26ac4654e361786c82da3b29ce0402c3c00
 
-PODFILE CHECKSUM: f3d218c7ab84c69c3dfbcd8905fb194eb8e73edf
+PODFILE CHECKSUM: 329633b44a8fd0db3b3bfc4b47455ca450bf1f81
 
 COCOAPODS: 1.5.0
