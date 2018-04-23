@@ -44,20 +44,28 @@ export default class ViroSample extends Component {
       <View collapsable={false} style={{ flex: 1 }}>
         <ViroARSceneNavigator {...this.state.sharedProps}
           style={{ flex: 1 }}
-          initialScene={{scene: InitialARScene}} 
+          initialScene={{scene: InitialARScene}}
         />
+      <View style={{ position:"absolute", left: 0, right: 0, top: 60, alignItems: 'center' }}>
+        <Text style={{ height: 70, width: 400, color: '#ffffff', backgroundColor: '#000000', borderRadius: 10 }}>
+          { this.props.fetchDistance.distance }
+        </Text>
+      </View>
         <View style={{ position:"absolute", left: 0, right: 0, bottom: 77, alignItems: 'center' }}>
           {
             (this.props.fetchDistance.distance <= 10) ?
-            <TouchableHighlight
-              style={{ height: 80, width: 80, paddingTop: 20, paddingBottom: 20, marginVertical: 10, backgroundColor: '#00000000', borderRadius: 10, borderColor: '#ffffff00' }}
-              underlayColor={'#ffffff00'}>
-              <Image source={require("../../js/res/btn_mode_objects.png")}/>
-            </TouchableHighlight> : <TouchableHighlight />
+            (
+              <TouchableHighlight
+                style={{ height: 80, width: 80, paddingTop: 20, paddingBottom: 20, marginVertical: 10, backgroundColor: '#00000000', borderRadius: 10, borderColor: '#ffffff00' }}
+                underlayColor={'#ffffff00'}>
+                <Image source={require("../../js/res/btn_mode_objects.png")}/>
+              </TouchableHighlight>
+            )
+            : (<TouchableHighlight />)
           }
         </View>
       </View>
-      
+
     );
   }
 }

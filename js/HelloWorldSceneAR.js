@@ -128,10 +128,10 @@ export default class HelloWorldSceneAR extends Component {
         }, () => {
           this.getCoordinate()
         });
-        
+
       },
       (error) => this.setState({ error: error.message }),
-      { enableHighAccuracy: true, timeout: 5000, maximumAge: 5000, distanceFilter: 1 },
+      { enableHighAccuracy: true, timeout: 10000, maximumAge: 10000, distanceFilter: 1 },
     )
 
     Geolocation.watchPosition(
@@ -143,10 +143,10 @@ export default class HelloWorldSceneAR extends Component {
         }, () => {
           this.getCoordinate()
         });
-        
+
       },
       (error) => this.setState({ error: error.message }),
-      { enableHighAccuracy: true, timeout: 5000, maximumAge: 5000, distanceFilter: 1 },
+      { enableHighAccuracy: true, timeout: 10000, maximumAge: 10000, distanceFilter: 1 },
     )
   }
 
@@ -154,11 +154,11 @@ export default class HelloWorldSceneAR extends Component {
     return (
       <ViroARScene onTrackingUpdated={this._onInitialized} >
         {
-          this.state.xSel && this.state.ySel && this.state.zSel && 
+          this.state.xSel && this.state.ySel && this.state.zSel &&
           <ViroBox position={[this.state.xSel, this.state.ySel, this.state.zSel]} scale={[3, 3, 3]} materials={["grid"]} animation={{name: "rotate", run: true, loop: true}}/>
         }
         {
-          this.state.degree && this.state.xSel && this.state.ySel && this.state.zSel && 
+          this.state.degree && this.state.xSel && this.state.ySel && this.state.zSel &&
           <ViroText text={String(this.state.distance)} scale={[5, 5, 5]} position={[this.state.xSel, -2, this.state.zSel]} style={styles.helloWorldTextStyle} />
         }
       </ViroARScene>
@@ -182,7 +182,7 @@ var styles = StyleSheet.create({
     fontSize: 30,
     color: '#ffffff',
     textAlignVertical: 'center',
-    textAlign: 'center',  
+    textAlign: 'center',
   },
 });
 
