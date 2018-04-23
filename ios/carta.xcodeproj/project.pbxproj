@@ -279,12 +279,28 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
+
 		9E1FBF41208B501B00FC6BC7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F592C43270AD446FA1081677 /* RNSimpleCompass.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = RNSimpleCompass;
+
+		86BBC4F2208B30A500D08E9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7F9DDBA34C52426B9A311F8A /* BVLinearGradient.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = BVLinearGradient;
+		};
+		86BBC4F4208B30A500D08E9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7F9DDBA34C52426B9A311F8A /* BVLinearGradient.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 64AA15081EF7F30100718508;
+			remoteInfo = "BVLinearGradient-tvOS";
+
 		};
 		9E43DEED2089B0CD003E0BEC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -466,12 +482,9 @@
 				A21F5EBB19AB41C4BC229C2B /* libRNVectorIcons.a in Frameworks */,
 				025787FD06AF4C839BA3FF1E /* libRCTBEEPickerManager.a in Frameworks */,
 				5CCAFA6561E84A6E8F558A0F /* libRNImagePicker.a in Frameworks */,
-<<<<<<< HEAD
 				86D447A1F8996D46155A29BF /* Pods_carta.framework in Frameworks */,
 				CE61EC23B8194D1587B72CD3 /* libRNSimpleCompass.a in Frameworks */,
-=======
 				33EA5118E4CC4082B0B9876C /* libBVLinearGradient.a in Frameworks */,
->>>>>>> 9b6ded8fd97dc3fc0a369bd9a32984840186dfe6
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,11 +674,8 @@
 				CF217987C0174E52B04236CC /* RNVectorIcons.xcodeproj */,
 				EAC15E6B88584A46B04944A3 /* RCTBEEPickerManager.xcodeproj */,
 				D26D7ECCE640425F8F59C97E /* RNImagePicker.xcodeproj */,
-<<<<<<< HEAD
 				F592C43270AD446FA1081677 /* RNSimpleCompass.xcodeproj */,
-=======
 				7F9DDBA34C52426B9A311F8A /* BVLinearGradient.xcodeproj */,
->>>>>>> 9b6ded8fd97dc3fc0a369bd9a32984840186dfe6
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -707,18 +717,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
 		9E1FBF3E208B501B00FC6BC7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				9E1FBF42208B501B00FC6BC7 /* libRNSimpleCompass.a */,
-=======
+			);
+			name = Products;
+			sourceTree = "<group>";
 		86BBC4EE208B30A400D08E9E /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				86BBC4F3208B30A500D08E9E /* libBVLinearGradient.a */,
 				86BBC4F5208B30A500D08E9E /* libBVLinearGradient.a */,
->>>>>>> 9b6ded8fd97dc3fc0a369bd9a32984840186dfe6
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -729,11 +739,8 @@
 				8A2505D842AC47ACB3E839C1 /* libRNVectorIcons.a */,
 				A6067FCDDEC84AE79B8A64BA /* libRCTBEEPickerManager.a */,
 				0B04868BE06D4D1390C629C7 /* libRNImagePicker.a */,
-<<<<<<< HEAD
 				93BC423411E246EFBFDF9B6A /* libRNSimpleCompass.a */,
-=======
 				3EFDA67AACF64F5B884919AC /* libBVLinearGradient.a */,
->>>>>>> 9b6ded8fd97dc3fc0a369bd9a32984840186dfe6
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -1202,13 +1209,11 @@
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-<<<<<<< HEAD
 		9E1FBF42208B501B00FC6BC7 /* libRNSimpleCompass.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libRNSimpleCompass.a;
 			remoteRef = 9E1FBF41208B501B00FC6BC7 /* PBXContainerItemProxy */;
-=======
 		86BBC4F3208B30A500D08E9E /* libBVLinearGradient.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1221,7 +1226,6 @@
 			fileType = archive.ar;
 			path = libBVLinearGradient.a;
 			remoteRef = 86BBC4F4208B30A500D08E9E /* PBXContainerItemProxy */;
->>>>>>> 9b6ded8fd97dc3fc0a369bd9a32984840186dfe6
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		9E43DEEE2089B0CD003E0BEC /* libjsinspector.a */ = {
@@ -1614,11 +1618,8 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-picker/ios/RCTBEEPickerManager",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
-<<<<<<< HEAD
 					"$(SRCROOT)/../node_modules/react-native-simple-compass/ios",
-=======
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
->>>>>>> 9b6ded8fd97dc3fc0a369bd9a32984840186dfe6
 				);
 				INFOPLIST_FILE = cartaTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1653,11 +1654,8 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-picker/ios/RCTBEEPickerManager",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
-<<<<<<< HEAD
 					"$(SRCROOT)/../node_modules/react-native-simple-compass/ios",
-=======
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
->>>>>>> 9b6ded8fd97dc3fc0a369bd9a32984840186dfe6
 				);
 				INFOPLIST_FILE = cartaTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1696,11 +1694,8 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-picker/ios/RCTBEEPickerManager",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
-<<<<<<< HEAD
 					"$(SRCROOT)/../node_modules/react-native-simple-compass/ios",
-=======
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
->>>>>>> 9b6ded8fd97dc3fc0a369bd9a32984840186dfe6
 				);
 				INFOPLIST_FILE = carta/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
@@ -1736,11 +1731,8 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-picker/ios/RCTBEEPickerManager",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
-<<<<<<< HEAD
 					"$(SRCROOT)/../node_modules/react-native-simple-compass/ios",
-=======
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
->>>>>>> 9b6ded8fd97dc3fc0a369bd9a32984840186dfe6
 				);
 				INFOPLIST_FILE = carta/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
@@ -1778,11 +1770,8 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-picker/ios/RCTBEEPickerManager",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
-<<<<<<< HEAD
 					"$(SRCROOT)/../node_modules/react-native-simple-compass/ios",
-=======
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
->>>>>>> 9b6ded8fd97dc3fc0a369bd9a32984840186dfe6
 				);
 				INFOPLIST_FILE = "carta-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1825,11 +1814,8 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-picker/ios/RCTBEEPickerManager",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
-<<<<<<< HEAD
 					"$(SRCROOT)/../node_modules/react-native-simple-compass/ios",
-=======
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
->>>>>>> 9b6ded8fd97dc3fc0a369bd9a32984840186dfe6
 				);
 				INFOPLIST_FILE = "carta-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2041,4 +2027,4 @@
 /* End XCConfigurationList section */
 	};
 	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
-}
+};
