@@ -9,6 +9,7 @@ import {
   ViroText,
   ViroConstants,
   ViroBox,
+  Viro3DObject,
   ViroMaterials,
   ViroAnimations
 } from 'react-viro';
@@ -156,6 +157,16 @@ export default class HelloWorldSceneAR extends Component {
         {
           this.state.xSel && this.state.ySel && this.state.zSel &&
           <ViroBox position={[this.state.xSel, this.state.ySel, this.state.zSel]} scale={[3, 3, 3]} materials={["grid"]} animation={{name: "rotate", run: true, loop: true}}/>
+        }
+        {
+          this.state.xSel && this.state.ySel && this.state.zSel &&
+          <Viro3DObject
+            source={require('./res/btn_close.obj')}
+            position={[this.state.xSel, this.state.ySel+1, this.state.zSel]}
+            scale={[3, 3, 3]}
+            materials={["grid"]}
+            type="OBJ"
+            animation={{name: "rotate", run: true, loop: true}}/>
         }
         {
           this.state.degree && this.state.xSel && this.state.ySel && this.state.zSel &&

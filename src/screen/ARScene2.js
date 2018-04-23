@@ -58,7 +58,7 @@ export default class ViroSample extends Component {
               <TouchableHighlight
                 style={{ height: 80, width: 80, paddingTop: 20, paddingBottom: 20, marginVertical: 10, backgroundColor: '#00000000', borderRadius: 10, borderColor: '#ffffff00' }}
                 underlayColor={'#ffffff00'}>
-                <Image source={require("../../js/res/btn_mode_objects.png")}/>
+                <Image source={require("../../js/res/CamButton.png")}/>
               </TouchableHighlight>
             )
             : (<TouchableHighlight />)
