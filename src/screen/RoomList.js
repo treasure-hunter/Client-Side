@@ -14,7 +14,7 @@ export default class RoomList extends Component {
 
   render() {
     const resizeMode = 'center'
-    
+
     return (
       <View
       style={{ flex: 1, backgroundColor: '#210E3A' }} >
@@ -32,7 +32,7 @@ export default class RoomList extends Component {
               flex: 1,
               resizeMode,
             }}
-            source={ require('../asset/bg_2.png')}
+            source={ require('../asset/bg_compass.png')}
           />
         </View>
         <RoomDetail toGamePlay={ this.toGamePlay }/>

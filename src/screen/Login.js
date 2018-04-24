@@ -103,7 +103,7 @@ export class Login extends Component {
                 </Item>
               </Form>
               <TouchableOpacity
-              style={{ paddingVertical: 10, alignSelf:'center', width: '50%', borderRadius: 10, backgroundColor: '#F1F1F4', alignItems: 'center' }}
+              style={{ paddingVertical: 10, alignSelf:'center', width: '50%', borderRadius: 10, backgroundColor: '#F1F1F4', alignItems: 'center', shadowColor: '#F1F1F4', shadowOffset: {width: 0, height: 5}, shadowRadius: 0, shadowOpacity: .9 } }
               success
               onPress={ () => this.onSignIn() }>
                 <Text style={{ fontFamily: 'futura', fontWeight: 'bold', color: '#3E073E', textAlign: 'center' }}>SIGN IN</Text>
