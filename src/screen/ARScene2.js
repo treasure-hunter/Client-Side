@@ -105,7 +105,7 @@ export class ViroSample extends Component {
             style={{ height: 50, width: 50, paddingTop: 0, paddingBottom: 0, backgroundColor: '#210E3A', borderRadius: 20, borderColor: '#210E3A' }}
             underlayColor={'#ffffff'}
           >
-            <View style={{ paddingLeft: 30 ,alignItems: 'center', justifyContent: 'center' }}>
+            <View>
               <Icon name="ios-information-circle-outline" style={{fontSize: 32, color: 'white'}}/>
             </View>
           </TouchableHighlight>

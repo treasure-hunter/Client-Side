@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {Modal, Text, TouchableHighlight, View} from 'react-native';
+import {Modal, Text, TouchableHighlight, View, Image} from 'react-native';
+import { Thumbnail } from 'native-base'
 
 export default class ModalExample extends Component {
   state = {
@@ -22,13 +23,12 @@ export default class ModalExample extends Component {
           }}>
           <View style={{marginTop: 22}}>
             <View>
-              <Text>Hello World!</Text>
-
+              <Thumbnail large source={{ uri: this.props.image }} style={{ width: 300, height: 500, alignSelf:'center' }}/>
               <TouchableHighlight
                 onPress={() => {
                   this.setModalVisible(!this.state.modalVisible);
                 }}>
-                <Text>Hide Modal</Text>
+                <Text>Close</Text>
               </TouchableHighlight>
             </View>
           </View>
@@ -38,7 +38,7 @@ export default class ModalExample extends Component {
           onPress={() => {
             this.setModalVisible(true);
           }}>
-          <Text>Show Modal</Text>
+          <Text>Show modal</Text>
         </TouchableHighlight>
       </View>
     );

@@ -21,6 +21,7 @@ import {
 
 import { fetchQuests } from '../store/quest/quest-actions'
 import { fetchPosition } from '../store/ARScene/ar-action'
+import ModalExample from '../components/Modal'
 
 export class RoomDetail extends Component {
   componentDidMount () {
@@ -47,6 +48,7 @@ export class RoomDetail extends Component {
             <Grid style={{ marginBottom: 20 }}>
               <Col style={{ alignSelf:'center', width:110 }}>
               <Thumbnail square large source={{uri: quest.image_path}} style={{ width: 100 }}/>
+              <ModalExample image={quest.image_path}/>
               </Col>
               <Col>
                 <Card key={i} style={{ backgroundColor: 'rgba(52,52,52,alpha)' }} >

@@ -33,7 +33,7 @@ export default class LoginForm extends Component {
               iconLeft
               onPress={ () => this.createRoom() }
               style={{ paddingVertical: 5, borderRadius: 10, backgroundColor: '#F1F1F4', alignContent: 'center' }}>
-                <Icon name='home' style={{ alignSelf: 'center' }}/>
+                <Icon name='map' style={{ alignSelf: 'center' }}/>
                 <Text style={{ fontFamily:'futura', alignSelf: 'center' }}>Create Quest</Text>
               </TouchableOpacity>
             </Col>
