@@ -19,6 +19,8 @@ export default class LoginForm extends Component {
   }
 
   render() {
+    const resizeMode = 'center'
+
     return (
       <View>
         <View style={{ flex: .9 }}>

@@ -7,7 +7,9 @@ import {
   PixelRatio,
   TouchableHighlight,
   Image,
-  Button
+  Button,
+  Alert,
+  TouchableOpacity
 } from 'react-native';
 
 import { Icon } from 'native-base';
@@ -47,6 +49,22 @@ export class ViroSample extends Component {
     this._getARNavigator = this._getARNavigator.bind(this);
   }
 
+  _hint = () => {
+    Alert.alert(
+    'Alert Title',
+    `${this.props.hint}`,
+    { cancelable: true }
+    );
+  }
+
+  showImage = () => {
+    Alert.alert(
+    'Alert Title',
+    `Geli ahh`,
+    { cancelable: true }
+    );
+  }
+
   render() {
 
     return this._getARNavigator()
@@ -61,18 +79,18 @@ export class ViroSample extends Component {
           style={{ flex: 1 }}
           initialScene={{scene: InitialARScene}}
         />
-        <View style={{ position:"absolute", left: 0, right: 0, top: 60, alignItems: 'center',  }}>
+      <View style={{ position:"absolute", left: 150, right: 0, top: 60  }}>
           <View style={{ width: 100, height: 40, borderRadius: 30 , backgroundColor: '#210E3A', alignItems: 'center', justifyContent: 'center' }}>
             <Text style={{  color: '#F1F1F4', fontSize: 15,  }}>
-              { this.props.fetchAction.distance } m
+             {this.props.fetchAction.distance} m
             </Text>
           </View>
         </View>
 
-        <View style={{ position:"absolute", left: -30, right: 0, top: 60, alignItems: 'flex-start' }}>
+        <View style={{ position:"absolute", left: 0, right: 0, top: 60, width: 20 }}>
           <TouchableHighlight
             onPress={ () => this.props.navigation.dispatch(toHome) }
-            style={{ alignItems: 'center', justifyContent: 'center',height: 40, width: 120, paddingTop: 0, paddingBottom: 0, backgroundColor: '#210E3A', borderRadius: 20, borderColor: '#210E3A' }}
+            style={{ alignItems: 'center', justifyContent: 'center',height: 40, width: 100, paddingTop: 0, paddingBottom: 0, backgroundColor: '#210E3A', borderRadius: 20, borderColor: '#210E3A' }}
             underlayColor={'#ffffff'}
           >
             <View style={{ paddingLeft: 30 ,alignItems: 'center', justifyContent: 'center' }}>
@@ -81,14 +99,28 @@ export class ViroSample extends Component {
           </TouchableHighlight>
         </View>
 
-        <View style={{ position:"absolute", left: 0, right: 20, bottom: 43, alignItems: 'flex-end' }}>
+        <View style={{ position:"absolute", left: 20, bottom: 77 }}>
+          <TouchableHighlight
+            onPress={this._hint}
+            style={{ height: 50, width: 50, paddingTop: 0, paddingBottom: 0, backgroundColor: '#210E3A', borderRadius: 20, borderColor: '#210E3A' }}
+            underlayColor={'#ffffff'}
+          >
+            <View style={{ paddingLeft: 30 ,alignItems: 'center', justifyContent: 'center' }}>
+              <Icon name="ios-information-circle-outline" style={{fontSize: 32, color: 'white'}}/>
+            </View>
+          </TouchableHighlight>
+        </View>
+
+        <View style={{ position:"absolute", right: 20, bottom: 43 }}>
           {
             (this.props.fetchAction.distance <= 10) ?
             (
-              <Image
-              style={{width: 70, height: 125, borderRadius: 5}}
-              source={{uri: this.props.image_path}}
-              />
+              <TouchableOpacity onPress={this.showImage}>
+                <Image
+                style={{width: 70, height: 125, borderRadius: 5}}
+                source={{uri: this.props.image_path}}
+                />
+              </TouchableOpacity>
             )
             :
             (
@@ -99,9 +131,9 @@ export class ViroSample extends Component {
           }
         </View>
 
-        <View style={{ position:"absolute", left: 0, right: 0, bottom: 77, alignItems: 'center' }}>
+        <View style={{ position:"absolute", left: 150, right: 0, bottom: 77, width: 120 }}>
           {
-            (this.props.fetchAction.distance <= 10) ?
+            (this.props.fetchAction.distance <= 5) ?
             (
               <TouchableHighlight
                 style={{ height: 80, width: 80, paddingTop: 20, paddingBottom: 20, marginVertical: 10, backgroundColor: '#00000000', borderRadius: 40, borderColor: '#ffffff00' }}
@@ -127,6 +159,7 @@ export class ViroSample extends Component {
     );
   }
 }
+
 
 var localStyles = StyleSheet.create({
   viroContainer :{
@@ -185,7 +218,8 @@ var localStyles = StyleSheet.create({
 
 const mapStateToProps = state => ({
   fetchAction: state.fetchAction,
-  image_path: state.fetchAction.image_path
+  image_path: state.fetchAction.image_path,
+  hint: state.fetchAction.hint
 })
 
 

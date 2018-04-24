@@ -11,11 +11,12 @@ import { Container,
   Text,
   Right,
   Left,
+  Icon
 } from 'native-base';
 import { Grid, Col, Row } from 'react-native-easy-grid'
 import { auth } from '../firebase/index';
 import { showImagePicker } from 'react-native-image-picker'
-import { AsyncStorage, Alert, TouchableOpacity, View } from 'react-native';
+import { AsyncStorage, Alert, TouchableOpacity, View, Image } from 'react-native';
 import { bindActionCreators } from 'redux';
 import axios from 'axios';
 
@@ -37,7 +38,7 @@ export class CreateRoom extends Component {
   }
 
   static navigationOptions = {
-    title: `Create Room`
+    title: `Create Quest`
   }
 
   selectPhotoTapped = () => {
@@ -140,14 +141,33 @@ export class CreateRoom extends Component {
   }
 
   render() {
+    const resizeMode = 'center'
+
     return (
       <View
       style={{ flex: 1, backgroundColor: '#210E3A' }} >
+        <View
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: '-50%',
+            width: '100%',
+            height: '100%',
+          }}
+        >
+          <Image
+            style={{
+              flex: 1,
+              resizeMode,
+            }}
+            source={ require('../asset/bg_2.png')}
+          />
+        </View>
         <Container>
           <Content style={{ paddingHorizontal:20 }}>
             <Form style={{ paddingVertical:20 }}>
               <Item fixedLabel last rounded style={{ marginVertical:10, backgroundColor:'#B1AEC4', borderRadius: 10 }}>
-                <Label style={{ fontFamily: 'futura', fontWeight: '500' }}>Room Name</Label>
+                <Label style={{ fontFamily: 'futura', fontWeight: '500' }}>Quest Name</Label>
                 <Input
                 autoCapitalize='none'
                 name="roomName"
@@ -206,6 +226,7 @@ export class CreateRoom extends Component {
               info
               style={{ marginVertical: 5, paddingVertical: 10, alignSelf:'center', width: '50%', borderRadius: 10, backgroundColor: '#F1F1F4', alignItems: 'center' }}
               onPress={ () => this.getGeolocation() }>
+                <Icon name='ios-locate' />
                 <Text style={{ fontFamily: 'futura', fontWeight: 'bold', color: '#3E073E', textAlign: 'center' }}>Get Location</Text>
               </TouchableOpacity>
               <TouchableOpacity
@@ -213,7 +234,7 @@ export class CreateRoom extends Component {
               info
               style={{ marginVertical: 5, paddingVertical: 10, alignSelf:'center', width: '50%', borderRadius: 10, backgroundColor: '#F1F1F4', alignItems: 'center' }}
               onPress={ () => this.selectPhotoTapped() }>
-                <Text style={{ fontFamily: 'futura', fontWeight: 'bold', color: '#3E073E', textAlign: 'center' }}>Take Picture</Text>
+                <Icon name='ios-camera' />
               </TouchableOpacity>
               { this.state.latitudeTrig && this.state.longitudeTrig &&
                 <TouchableOpacity

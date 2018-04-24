@@ -31,7 +31,8 @@ export class RoomDetail extends Component {
     this.props.fetchPosition({
       longitude: quest.longitude,
       latitude: quest.latitude,
-      image_path: quest.image_path
+      image_path: quest.image_path,
+      hint: quest.hint
     })
     this.props.toGamePlay()
   }
@@ -43,12 +44,12 @@ export class RoomDetail extends Component {
         <Content padder style={{ padding: 4 }}>
           {
             this.props.quests.map((quest, i) => (
-            <Grid>
+            <Grid style={{ marginBottom: 20 }}>
               <Col style={{ alignSelf:'center', width:110 }}>
               <Thumbnail square large source={{uri: quest.image_path}} style={{ width: 100 }}/>
               </Col>
               <Col>
-                <Card key={i} style={{ backgroundColor: 'rgba(52,52,52,alpha)' }}>
+                <Card key={i} style={{ backgroundColor: 'rgba(52,52,52,alpha)' }} >
                   <CardItem
                   style={{ backgroundColor: 'rgba(52,52,52,alpha)' }}
                   header bordered button onPress={ () => this.onGameClick(quest) }>
@@ -56,7 +57,8 @@ export class RoomDetail extends Component {
                   </CardItem>
                   <CardItem
                   style={{ backgroundColor: 'rgba(52,52,52,alpha)' }}
-                  bordered>
+                  bordered
+                  button onPress={ () => this.onGameClick(quest) }>
                     <Body>
                       <Text style={{ fontSize: 13, fontFamily: 'futura', color: '#D8D6E1', fontWeight: '500' }}>
                         { quest.description }

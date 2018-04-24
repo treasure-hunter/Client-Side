@@ -4,7 +4,8 @@ const initialState = {
   distance: null,
   latitude: null,
   longitude: null,
-  image_path: null
+  image_path: null,
+  hint: null
 }
 
 export const fetchAction = (state = { ...initialState }, action) => {
@@ -20,7 +21,8 @@ export const fetchAction = (state = { ...initialState }, action) => {
         ...state,
         latitude: action.payload.latitude,
         longitude: action.payload.longitude,
-        image_path: action.payload.image_path
+        image_path: action.payload.image_path,
+        hint: action.payload.hint
       }
     default:
       return state;

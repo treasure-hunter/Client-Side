@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Form, Item, Input, Label, Spinner } from 'native-base';
-import { View, Text, StyleSheet, Alert, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Alert, TouchableOpacity, Image } from 'react-native';
 import { db, auth } from '../firebase/index'
 import firebase from 'firebase'
 import { bindActionCreators } from 'redux'
@@ -41,11 +41,30 @@ export class Register extends Component {
   }
 
   render() {
+    const resizeMode = 'center'
+
     return (
       <View
       style={{ flex: 1, justifyContent: 'space-around', alignItems: 'center', backgroundColor: '#210E3A' }} >
+        <View
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: '-50%',
+            width: '100%',
+            height: '100%',
+          }}
+        >
+          <Image
+            style={{
+              flex: 1,
+              resizeMode,
+            }}
+            source={ require('../asset/bg_2.png')}
+          />
+        </View>
         <View>
-          <Text style={{ fontSize:33, textAlign:'center', fontFamily:'Didot', color: '#F1F1F4' }} >
+          <Text style={{ fontSize:48, textAlign:'center', fontFamily:'Didot', color: '#F1F1F4' }} >
             Register
           </Text>
           {

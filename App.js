@@ -1,6 +1,6 @@
 console.disableYellowBox = true
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import { Provider } from 'react-redux'
 import { SwitchNavigator, StackNavigator } from 'react-navigation'
 import { auth  } from './src/firebase/index'
@@ -27,7 +27,6 @@ export default class App extends React.Component {
     return (
       <Provider store={ store }>
         <View style={styles.container}>
-          {/* <Login /> */}
           <Apps />
         </View>
       </ Provider>
@@ -78,9 +77,10 @@ const Apps = SwitchNavigator({
 },{
   initialRouteName: 'AuthStack'
 })
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#3E073E',
   },
 });

@@ -51,8 +51,28 @@ export class Login extends Component {
   }
 
   render() {
+    const resizeMode = 'center'
+    const bgImage = require('../asset/bg_2.png')
+
     return (
-      <View style={{ flex: 1, justifyContent: 'space-around', alignItems: 'center', backgroundColor: '#210E3A' }}>
+      <View style={{ flex: 1, backgroundColor: '#210E3A', alignItems: 'center', justifyContent:'space-around' }}>
+        <View
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: '-50%',
+            width: '100%',
+            height: '100%',
+          }}
+        >
+          <Image
+            style={{
+              flex: 1,
+              resizeMode,
+            }}
+            source={ require('../asset/bg_2.png')}
+          />
+        </View>
         <View>
           <Image source={require('../asset/Logov2.png')} style={{ width: 150, height: 170, alignSelf: 'center' }}></Image>
           {

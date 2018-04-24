@@ -163,11 +163,11 @@ export class HelloWorldSceneAR extends Component {
     return (
       <ViroARScene onTrackingUpdated={this._onInitialized} >
         {
-          this.state.xSel && this.state.ySel && this.state.zSel &&
+          this.state.xSel && this.state.ySel && this.state.zSel && this.state.distance < 10 &&
           <Viro3DObject
             source={require('./res/btn_close.obj')}
             position={[this.state.xSel, this.state.ySel+1, this.state.zSel]}
-            scale={[4, 4, 4]}
+            scale={[1, 1, 1]}
             rotation={[90, 0, 0]}
             materials={["grid"]}
             type="OBJ"

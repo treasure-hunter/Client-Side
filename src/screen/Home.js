@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native'
+import { View, Image } from 'react-native'
 import LoginCard from '../components/LoginCard'
 import NewGame from '../components/NewGame'
 
@@ -17,9 +17,27 @@ export default class Home extends Component {
   }
 
   render() {
+    const resizeMode = 'center'
     return (
       <View
       style={{ flex: 1, alignItems: 'center', backgroundColor: '#210E3A' }} >
+        <View
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: '-50%',
+            width: '100%',
+            height: '100%',
+          }}
+        >
+          <Image
+            style={{
+              flex: 1,
+              resizeMode,
+            }}
+            source={ require('../asset/bg_2.png')}
+          />
+        </View>
         <NewGame toCreateRoom={ this.toCreateRoom } toRoomList={ this.toRoomList }/>
       </View>
     );
