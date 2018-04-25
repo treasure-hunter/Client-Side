@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1524663676842" clover="3.2.0">
-  <project timestamp="1524663676842" name="All files">
-    <metrics statements="251" coveredstatements="133" conditionals="63" coveredconditionals="20" methods="106" coveredmethods="43" elements="420" coveredelements="196" complexity="0" loc="251" ncloc="251" packages="10" files="25" classes="25">
+<coverage generated="1524664071725" clover="3.2.0">
+  <project timestamp="1524664071725" name="All files">
+    <metrics statements="250" coveredstatements="136" conditionals="63" coveredconditionals="20" methods="106" coveredmethods="45" elements="419" coveredelements="201" complexity="0" loc="250" ncloc="250" packages="10" files="25" classes="25">
       <package name="carta">
         <metrics statements="8" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
         <file name="App.js" path="/Users/hacktiv8/Documents/final-project/carta/App.js">
@@ -34,7 +34,7 @@
         </file>
         <file name="bg_compass.png" path="/Users/hacktiv8/Documents/final-project/carta/src/asset/bg_compass.png">
           <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-          <line num="1" count="1" type="stmt"/>
+          <line num="1" count="2" type="stmt"/>
         </file>
         <file name="winner.png" path="/Users/hacktiv8/Documents/final-project/carta/src/asset/winner.png">
           <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -70,22 +70,22 @@
           <line num="48" count="0" type="stmt"/>
           <line num="57" count="0" type="stmt"/>
           <line num="63" count="0" type="stmt"/>
-          <line num="90" count="1" type="stmt"/>
-          <line num="94" count="1" type="stmt"/>
+          <line num="90" count="2" type="stmt"/>
+          <line num="94" count="2" type="stmt"/>
         </file>
       </package>
       <package name="carta.src.firebase">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <file name="index.js" path="/Users/hacktiv8/Documents/final-project/carta/src/firebase/index.js">
           <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-          <line num="2" count="5" type="stmt"/>
-          <line num="9" count="5" type="stmt"/>
-          <line num="10" count="5" type="stmt"/>
-          <line num="11" count="5" type="stmt"/>
+          <line num="2" count="6" type="stmt"/>
+          <line num="9" count="6" type="stmt"/>
+          <line num="10" count="6" type="stmt"/>
+          <line num="11" count="6" type="stmt"/>
         </file>
       </package>
       <package name="carta.src.screen">
-        <metrics statements="119" coveredstatements="31" conditionals="42" coveredconditionals="3" methods="59" coveredmethods="15"/>
+        <metrics statements="118" coveredstatements="34" conditionals="42" coveredconditionals="3" methods="59" coveredmethods="17"/>
         <file name="ARScene2.js" path="/Users/hacktiv8/Documents/final-project/carta/src/screen/ARScene2.js">
           <metrics statements="13" coveredstatements="4" conditionals="4" coveredconditionals="0" methods="8" coveredmethods="0"/>
           <line num="27" count="1" type="stmt"/>
@@ -214,11 +214,10 @@
           <line num="131" count="2" type="stmt"/>
         </file>
         <file name="RoomList.js" path="/Users/hacktiv8/Documents/final-project/carta/src/screen/RoomList.js">
-          <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-          <line num="11" count="0" type="stmt"/>
-          <line num="12" count="0" type="stmt"/>
-          <line num="16" count="0" type="stmt"/>
-          <line num="18" count="0" type="stmt"/>
+          <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+          <line num="11" count="1" type="stmt"/>
+          <line num="15" count="2" type="stmt"/>
+          <line num="17" count="2" type="stmt"/>
         </file>
         <file name="Winner.js" path="/Users/hacktiv8/Documents/final-project/carta/src/screen/Winner.js">
           <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
@@ -231,17 +230,17 @@
         <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <file name="actionTypes.js" path="/Users/hacktiv8/Documents/final-project/carta/src/store/actionTypes.js">
           <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-          <line num="1" count="7" type="stmt"/>
-          <line num="2" count="7" type="stmt"/>
-          <line num="3" count="7" type="stmt"/>
-          <line num="4" count="7" type="stmt"/>
-          <line num="5" count="7" type="stmt"/>
-          <line num="6" count="7" type="stmt"/>
-          <line num="7" count="7" type="stmt"/>
-          <line num="8" count="7" type="stmt"/>
-          <line num="9" count="7" type="stmt"/>
-          <line num="10" count="7" type="stmt"/>
-          <line num="11" count="7" type="stmt"/>
+          <line num="1" count="8" type="stmt"/>
+          <line num="2" count="8" type="stmt"/>
+          <line num="3" count="8" type="stmt"/>
+          <line num="4" count="8" type="stmt"/>
+          <line num="5" count="8" type="stmt"/>
+          <line num="6" count="8" type="stmt"/>
+          <line num="7" count="8" type="stmt"/>
+          <line num="8" count="8" type="stmt"/>
+          <line num="9" count="8" type="stmt"/>
+          <line num="10" count="8" type="stmt"/>
+          <line num="11" count="8" type="stmt"/>
         </file>
         <file name="index.js" path="/Users/hacktiv8/Documents/final-project/carta/src/store/index.js">
           <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -253,10 +252,10 @@
         <metrics statements="15" coveredstatements="15" conditionals="4" coveredconditionals="4" methods="7" coveredmethods="7"/>
         <file name="ar-action.js" path="/Users/hacktiv8/Documents/final-project/carta/src/store/ARScene/ar-action.js">
           <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
-          <line num="3" count="2" type="stmt"/>
+          <line num="3" count="3" type="stmt"/>
           <line num="4" count="1" type="stmt"/>
           <line num="5" count="1" type="stmt"/>
-          <line num="9" count="2" type="stmt"/>
+          <line num="9" count="3" type="stmt"/>
           <line num="10" count="1" type="stmt"/>
           <line num="11" count="1" type="stmt"/>
           <line num="16" count="1" type="stmt"/>
@@ -327,7 +326,7 @@
         <metrics statements="26" coveredstatements="25" conditionals="9" coveredconditionals="7" methods="10" coveredmethods="9"/>
         <file name="quest-actions.js" path="/Users/hacktiv8/Documents/final-project/carta/src/store/quest/quest-actions.js">
           <metrics statements="19" coveredstatements="18" conditionals="4" coveredconditionals="2" methods="9" coveredmethods="8"/>
-          <line num="4" count="2" type="stmt"/>
+          <line num="4" count="3" type="stmt"/>
           <line num="5" count="1" type="stmt"/>
           <line num="6" count="1" type="stmt"/>
           <line num="7" count="1" type="stmt"/>
