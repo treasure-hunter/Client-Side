@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1524664071725" clover="3.2.0">
-  <project timestamp="1524664071725" name="All files">
-    <metrics statements="250" coveredstatements="136" conditionals="63" coveredconditionals="20" methods="106" coveredmethods="45" elements="419" coveredelements="201" complexity="0" loc="250" ncloc="250" packages="10" files="25" classes="25">
+<coverage generated="1524664415647" clover="3.2.0">
+  <project timestamp="1524664415647" name="All files">
+    <metrics statements="250" coveredstatements="140" conditionals="63" coveredconditionals="20" methods="106" coveredmethods="48" elements="419" coveredelements="208" complexity="0" loc="250" ncloc="250" packages="10" files="25" classes="25">
       <package name="carta">
         <metrics statements="8" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
         <file name="App.js" path="/Users/hacktiv8/Documents/final-project/carta/App.js">
@@ -30,7 +30,7 @@
         </file>
         <file name="bg_2.png" path="/Users/hacktiv8/Documents/final-project/carta/src/asset/bg_2.png">
           <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-          <line num="1" count="3" type="stmt"/>
+          <line num="1" count="4" type="stmt"/>
         </file>
         <file name="bg_compass.png" path="/Users/hacktiv8/Documents/final-project/carta/src/asset/bg_compass.png">
           <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -85,7 +85,7 @@
         </file>
       </package>
       <package name="carta.src.screen">
-        <metrics statements="118" coveredstatements="34" conditionals="42" coveredconditionals="3" methods="59" coveredmethods="17"/>
+        <metrics statements="118" coveredstatements="38" conditionals="42" coveredconditionals="3" methods="59" coveredmethods="20"/>
         <file name="ARScene2.js" path="/Users/hacktiv8/Documents/final-project/carta/src/screen/ARScene2.js">
           <metrics statements="13" coveredstatements="4" conditionals="4" coveredconditionals="0" methods="8" coveredmethods="0"/>
           <line num="27" count="1" type="stmt"/>
@@ -164,11 +164,11 @@
           <line num="271" count="0" type="stmt"/>
         </file>
         <file name="Home.js" path="/Users/hacktiv8/Documents/final-project/carta/src/screen/Home.js">
-          <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-          <line num="11" count="0" type="stmt"/>
-          <line num="15" count="0" type="stmt"/>
-          <line num="19" count="0" type="stmt"/>
-          <line num="20" count="0" type="stmt"/>
+          <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+          <line num="11" count="1" type="stmt"/>
+          <line num="15" count="1" type="stmt"/>
+          <line num="19" count="3" type="stmt"/>
+          <line num="20" count="3" type="stmt"/>
         </file>
         <file name="Login.js" path="/Users/hacktiv8/Documents/final-project/carta/src/screen/Login.js">
           <metrics statements="20" coveredstatements="17" conditionals="6" coveredconditionals="2" methods="12" coveredmethods="11"/>
