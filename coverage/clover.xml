@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1524664415647" clover="3.2.0">
-  <project timestamp="1524664415647" name="All files">
-    <metrics statements="250" coveredstatements="140" conditionals="63" coveredconditionals="20" methods="106" coveredmethods="48" elements="419" coveredelements="208" complexity="0" loc="250" ncloc="250" packages="10" files="25" classes="25">
+<coverage generated="1524666018159" clover="3.2.0">
+  <project timestamp="1524666018160" name="All files">
+    <metrics statements="250" coveredstatements="144" conditionals="63" coveredconditionals="20" methods="106" coveredmethods="52" elements="419" coveredelements="216" complexity="0" loc="250" ncloc="250" packages="10" files="25" classes="25">
       <package name="carta">
         <metrics statements="8" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
         <file name="App.js" path="/Users/hacktiv8/Documents/final-project/carta/App.js">
@@ -42,14 +42,14 @@
         </file>
       </package>
       <package name="carta.src.components">
-        <metrics statements="21" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="17" coveredmethods="0"/>
+        <metrics statements="21" coveredstatements="6" conditionals="2" coveredconditionals="0" methods="17" coveredmethods="4"/>
         <file name="Modal.js" path="/Users/hacktiv8/Documents/final-project/carta/src/components/Modal.js">
-          <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>
-          <line num="11" count="0" type="stmt"/>
-          <line num="15" count="0" type="stmt"/>
+          <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="4"/>
+          <line num="11" count="3" type="stmt"/>
+          <line num="15" count="8" type="stmt"/>
           <line num="22" count="0" type="stmt"/>
-          <line num="29" count="0" type="stmt"/>
-          <line num="39" count="0" type="stmt"/>
+          <line num="29" count="1" type="stmt"/>
+          <line num="39" count="1" type="stmt"/>
         </file>
         <file name="NewGame.js" path="/Users/hacktiv8/Documents/final-project/carta/src/components/NewGame.js">
           <metrics statements="7" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="0"/>
