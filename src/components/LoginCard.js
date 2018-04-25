@@ -16,9 +16,6 @@ class LoginForm extends Component {
     }
   }
 
-  componentDidMount () {
-  }
-
   render() {
     return (
       <Container style={{ backgroundColor:'#fff' }} >

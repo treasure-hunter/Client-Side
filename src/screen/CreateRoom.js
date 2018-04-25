@@ -22,6 +22,9 @@ import axios from 'axios';
 
 import { loginwithEmail } from '../store/auth/auth-actions'
 
+const Sound = require('react-native-sound');
+let song = null
+
 export class CreateRoom extends Component {
   constructor () {
     super()
@@ -39,6 +42,26 @@ export class CreateRoom extends Component {
 
   static navigationOptions = {
     title: `Create Quest`
+  }
+
+  componentWillMount() {
+    song = new Sound('OneCreate.mp3',Sound.MAIN_BUNDLE, (error) => {
+      if (error) {
+        console.log('failed to load the sound', error);
+        return;
+      }
+      this.onPressButtonPlay()
+    })
+  }
+
+  onPressButtonPlay = () => {
+    if (song !== null) {
+      song.play(success => {
+        if (!success) {
+          console.log('error');
+        }
+      })
+    }
   }
 
   selectPhotoTapped = () => {

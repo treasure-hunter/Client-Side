@@ -13,34 +13,16 @@ export default class ModalExample extends Component {
 
   render() {
     return (
-      <View style={{marginTop: 22}}>
-        <Modal
-          animationType="slide"
-          transparent={false}
-          visible={this.state.modalVisible}
-          onRequestClose={() => {
-            alert('Modal has been closed.');
-          }}>
-          <View style={{marginTop: 22}}>
-            <View>
-              <Thumbnail large source={{ uri: this.props.image }} style={{ width: 300, height: 500, alignSelf:'center' }}/>
-              <TouchableHighlight
-                onPress={() => {
-                  this.setModalVisible(!this.state.modalVisible);
-                }}>
-                <Text>Close</Text>
-              </TouchableHighlight>
-            </View>
-          </View>
-        </Modal>
-
-        <TouchableHighlight
-          onPress={() => {
-            this.setModalVisible(true);
-          }}>
-          <Text>Show modal</Text>
-        </TouchableHighlight>
-      </View>
+      <Modal isVisible={this.state.isModalVisible}>
+        <View style={{ flex: 1, justifyContent: 'center', alignSelf: 'center'}}>
+          <TouchableOpacity onPress={this._toggleModal()}>
+            <Image
+              style={{width: 250, height: 300, borderRadius: 5}}
+              source={{uri: this.state.uri}}
+              />
+          </TouchableOpacity>
+        </View>
+      </Modal>
     );
   }
 }

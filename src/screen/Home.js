@@ -3,6 +3,9 @@ import { View, Image } from 'react-native'
 import LoginCard from '../components/LoginCard'
 import NewGame from '../components/NewGame'
 
+const Sound = require('react-native-sound');
+let songList = null
+
 export default class Home extends Component {
   static navigationOptions = {
     title: `cARta`
@@ -13,7 +16,25 @@ export default class Home extends Component {
   }
 
   toRoomList = () => {
-    this.props.navigation.navigate('RoomList')
+
+    song = new Sound('tethys.mp3',Sound.MAIN_BUNDLE, (error) => {
+      if (error) {
+        console.log('failed to load the sound', error);
+        return;
+      }
+      this.onPressButtonPlay()
+      this.props.navigation.navigate('RoomList')
+    })
+  }
+
+  onPressButtonPlay = () => {
+    if (song !== null) {
+      song.play(success => {
+        if (!success) {
+          console.log('error');
+        }
+      })
+    }
   }
 
   render() {

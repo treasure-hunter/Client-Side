@@ -1,7 +1,30 @@
 import React, { Component } from 'react';
 import {  View, Text, Image, TouchableOpacity } from 'react-native';
 
+const Sound = require('react-native-sound');
+let song = null
+
 export default class Winner extends Component {
+  componentWillMount() {
+    song = new Sound('victoryff.swf.mp3',Sound.MAIN_BUNDLE, (error) => {
+      if (error) {
+        console.log('failed to load the sound', error);
+        return;
+      }
+      this.onPressButtonPlay()
+    })
+  }
+
+  onPressButtonPlay = () => {
+    if (song !== null) {
+      song.play(success => {
+        if (!success) {
+          console.log('error');
+        }
+      })
+    }
+  }
+
   render() {
     const resizeMode = 'center'
     return (
@@ -33,7 +56,6 @@ export default class Winner extends Component {
           onPress={ () => this.props.navigation.navigate('HomeStack') }>
           <Text style={{ fontFamily: 'futura', fontWeight: 'bold', color: '#3E073E', textAlign: 'center' }}>Back to Home</Text>
         </TouchableOpacity>
-
       </View>
     );
   }

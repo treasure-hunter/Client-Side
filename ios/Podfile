@@ -20,4 +20,6 @@ target 'carta' do
   pod 'AWSSimpleDB'
   pod 'AWSSNS'
   pod 'AWSSQS'
+  pod 'RNSound', :path => '../node_modules/react-native-sound'
+
 end

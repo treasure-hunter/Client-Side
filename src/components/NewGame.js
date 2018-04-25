@@ -9,13 +9,73 @@ import {
   Thumbnail
  } from 'native-base';
 import { Col, Row, Grid } from "react-native-easy-grid";
+const Sound = require('react-native-sound');
+let song = null
+let buttonSong = null
 
 export default class LoginForm extends Component {
-  createRoom = async () => {
-    const token = await AsyncStorage.getItem('idToken')
-    if(token) {
-      this.props.toCreateRoom()
+  constructor(){
+    super()
+    this.state = {
+      token: null
     }
+  }
+
+  componentWillMount() {
+    song = new Sound('OneHome.mp3',Sound.MAIN_BUNDLE, (error) => {
+      if (error) {
+        console.log('failed to load the sound', error);
+        return;
+      }
+      this.onPressButton()
+    })
+  }
+
+  onPressButton = () => {
+    if (song !== null) {
+      song.play(success => {
+        if (!success) {
+          console.log('error');
+        }
+      })
+    }
+  }
+
+  createRoom = () => {
+    buttonSong = new Sound('tethys.mp3',Sound.MAIN_BUNDLE, (error) => {
+      if (error) {
+        console.log('failed to load the sound', error);
+        return;
+      }
+      song.pause();
+      this.onPressButtonPlay()
+      if (this.state.token) {
+        this.props.toCreateRoom()
+      }
+    })
+  }
+
+  onPressButtonPlay = () => {
+    if (buttonSong !== null) {
+      buttonSong.play(success => {
+        if (!success) {
+          console.log('error');
+        }
+      })
+    }
+  }
+
+  getToken = async () => {
+    const token = await AsyncStorage.getItem('idToken')
+    if (token) {
+      this.setState({
+        token: token
+      })
+    }
+  }
+
+  componentDidMount () {
+    this.getToken()
   }
 
   render() {

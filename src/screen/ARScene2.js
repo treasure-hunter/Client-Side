@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 import {
   AppRegistry,
   Text,
@@ -9,7 +10,8 @@ import {
   Image,
   Button,
   Alert,
-  TouchableOpacity
+  TouchableOpacity,
+  AsyncStorage
 } from 'react-native';
 
 import { Icon } from 'native-base';
@@ -23,6 +25,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchPosition } from '../store/ARScene/ar-action'
 import { NavigationActions } from 'react-navigation';
+import Modal from "react-native-modal";
 
 const toHome = NavigationActions.reset({
   index: 0,
@@ -44,7 +47,8 @@ export class ViroSample extends Component {
     super();
 
     this.state = {
-      sharedProps : sharedProps
+      sharedProps : sharedProps,
+      isModalVisible: false
     }
     this._getARNavigator = this._getARNavigator.bind(this);
   }
@@ -57,12 +61,21 @@ export class ViroSample extends Component {
     );
   }
 
-  showImage = () => {
-    Alert.alert(
-    'Alert Title',
-    `Geli ahh`,
-    { cancelable: true }
-    );
+  _toggleModal = () => {
+    this.setState({ isModalVisible: !this.state.isModalVisible });
+  }
+
+  _toWinner = async () => {
+    const token = await AsyncStorage.getItem('idToken')
+    axios.put(`https://fancy-to-do.appspot.com/treasure/update/${this.props.id}`, {}, {
+      headers: { token: token }
+    }).then( res => {
+      console.log(res);
+      console.log('============StatUS==========', res.status);
+      this.props.navigation.navigate('Winner')
+    }).catch(err => {
+      console.log('to winner func err ',err);
+    })
   }
 
   render() {
@@ -79,6 +92,18 @@ export class ViroSample extends Component {
           style={{ flex: 1 }}
           initialScene={{scene: InitialARScene}}
         />
+
+      <Modal isVisible={this.state.isModalVisible}>
+        <View style={{ flex: 1, justifyContent: 'center', alignSelf: 'center'}}>
+          <TouchableOpacity onPress={this._toggleModal}>
+            <Image
+              style={{width: 250, height: 300, borderRadius: 5}}
+              source={{uri: this.props.image_path}}
+              />
+          </TouchableOpacity>
+        </View>
+      </Modal>
+
       <View style={{ position:"absolute", left: 150, right: 0, top: 60  }}>
           <View style={{ width: 100, height: 40, borderRadius: 30 , backgroundColor: '#210E3A', alignItems: 'center', justifyContent: 'center' }}>
             <Text style={{  color: '#F1F1F4', fontSize: 15,  }}>
@@ -115,7 +140,7 @@ export class ViroSample extends Component {
           {
             (this.props.fetchAction.distance <= 10) ?
             (
-              <TouchableOpacity onPress={this.showImage}>
+              <TouchableOpacity onPress={this._toggleModal}>
                 <Image
                 style={{width: 70, height: 125, borderRadius: 5}}
                 source={{uri: this.props.image_path}}
@@ -138,7 +163,7 @@ export class ViroSample extends Component {
               <TouchableHighlight
                 style={{ height: 80, width: 80, paddingTop: 20, paddingBottom: 20, marginVertical: 10, backgroundColor: '#00000000', borderRadius: 40, borderColor: '#ffffff00' }}
                 underlayColor={'#7E799C'}
-                onPress={ () => this.props.navigation.navigate('Winner') }
+                onPress={ () => this._toWinner() }
                 >
                 <Image source={require("../../js/res/CamButton.png")}/>
               </TouchableHighlight>
@@ -153,7 +178,6 @@ export class ViroSample extends Component {
             )
           }
         </View>
-
       </View>
 
     );
@@ -219,7 +243,8 @@ var localStyles = StyleSheet.create({
 const mapStateToProps = state => ({
   fetchAction: state.fetchAction,
   image_path: state.fetchAction.image_path,
-  hint: state.fetchAction.hint
+  hint: state.fetchAction.hint,
+  id: state.fetchAction.id
 })
 
 

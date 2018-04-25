@@ -9,17 +9,49 @@ import {
   Spinner,
   Text } from 'native-base';
 import { auth } from '../firebase/index';
-import { AsyncStorage, StyleSheet, TouchableOpacity, View, Image, Alert } from 'react-native'
+import { AsyncStorage, StyleSheet, TouchableOpacity, View, Image, Alert, Button } from 'react-native'
 import { bindActionCreators } from 'redux'
-
 import { loginwithEmail } from '../store/auth/auth-actions'
+
+const Sound = require('react-native-sound');
+let song = null
+let buttonSong = null
 
 export class Login extends Component {
   constructor () {
     super()
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      pause: false
+    }
+  }
+
+  componentWillMount() {
+    song = new Sound('OneHome.mp3',Sound.MAIN_BUNDLE, (error) => {
+      if (error) {
+        console.log('failed to load the sound', error);
+        return;
+      }
+      this.onPressButtonPlay()
+    })
+
+    buttonSong = new Sound('tethys.mp3',Sound.MAIN_BUNDLE, (error) => {
+      if (error) {
+        console.log('failed to load the sound', error);
+        return;
+      }
+    })
+  }
+
+
+  onPressButtonPlay = () => {
+    if (song !== null) {
+      song.play(success => {
+        if (!success) {
+          console.log('error');
+        }
+      })
     }
   }
 
@@ -47,7 +79,14 @@ export class Login extends Component {
   }
 
   loginSuccess = () => {
-    this.props.navigation.navigate('HomeStack')
+    song.pause();
+    buttonSong.play(success => {
+      if (!success) {
+        console.log('error');
+      }
+      this.props.navigation.navigate('HomeStack')
+    })
+
   }
 
   render() {
@@ -117,6 +156,10 @@ export class Login extends Component {
             </View>
           }
         </View>
+        <Button
+          onPress={this.onPressButtonPlay}
+          title="play song"
+          />
       </View>
     );
   }

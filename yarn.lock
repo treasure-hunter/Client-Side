@@ -4449,7 +4449,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.0:
+prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.1.tgz#36644453564255ddda391191fb3a125cbdf654ca"
   dependencies:
@@ -4531,6 +4531,12 @@ react-lifecycles-compat@^1.0.2:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-1.1.4.tgz#fc005c72849b7ed364de20a0f64ff58ebdc2009a"
 
+react-native-animatable@^1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/react-native-animatable/-/react-native-animatable-1.2.4.tgz#b5fb7657e8f6edadbc26697057a327fb920b3039"
+  dependencies:
+    prop-types "^15.5.10"
+
 react-native-awesome-alerts@^1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/react-native-awesome-alerts/-/react-native-awesome-alerts-1.0.7.tgz#60344ab2044b994b77a9fc95f612b8347e31d1d6"
@@ -4585,6 +4591,13 @@ react-native-keyboard-aware-scroll-view@0.5.0:
     prop-types "^15.6.0"
     react-native-iphone-x-helper "^1.0.1"
 
+react-native-modal@^5.4.0:
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/react-native-modal/-/react-native-modal-5.4.0.tgz#95f70b5d68e08824951cd11038b9db2d6fdb9962"
+  dependencies:
+    prop-types "^15.6.1"
+    react-native-animatable "^1.2.4"
+
 react-native-picker@^4.3.5:
   version "4.3.5"
   resolved "https://registry.yarnpkg.com/react-native-picker/-/react-native-picker-4.3.5.tgz#bf791dde6908028a11aacb3fdc7c6b2bdb2cd3f3"
@@ -4598,6 +4611,10 @@ react-native-safe-area-view@^0.7.0:
 react-native-simple-compass@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/react-native-simple-compass/-/react-native-simple-compass-1.0.0.tgz#ac60ff5e060c800941ff5c0432120b2986a8a69a"
+
+react-native-sound@^0.10.9:
+  version "0.10.9"
+  resolved "https://registry.yarnpkg.com/react-native-sound/-/react-native-sound-0.10.9.tgz#6b00b0f4afd017cde09fbb9d171df1b5d5b851a8"
 
 "react-native-tab-view@github:react-navigation/react-native-tab-view":
   version "0.0.74"

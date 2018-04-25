@@ -18,26 +18,62 @@ import {
   IconNB,
   Thumbnail
 } from "native-base";
+import { View, TouchableOpacity, Image } from 'react-native';
+import Modal from 'react-native-modal'
 
 import { fetchQuests } from '../store/quest/quest-actions'
 import { fetchPosition } from '../store/ARScene/ar-action'
 import ModalExample from '../components/Modal'
+import WinnerList from './WinnerList'
+
+const Sound = require('react-native-sound');
+let song = null
 
 export class RoomDetail extends Component {
+  constructor() {
+    super()
+    this.state = {
+      isModalVisible: false
+    }
+  }
+
   componentDidMount () {
     this.props.fetchQuests()
   }
 
   onGameClick = (quest) => {
-    this.props.fetchPosition({
-      longitude: quest.longitude,
-      latitude: quest.latitude,
-      image_path: quest.image_path,
-      hint: quest.hint
+    song = new Sound('tethys.mp3',Sound.MAIN_BUNDLE, (error) => {
+      if (error) {
+        console.log('failed to load the sound', error);
+        return;
+      }
+      this.props.fetchPosition({
+        longitude: quest.longitude,
+        latitude: quest.latitude,
+        image_path: quest.image_path,
+        hint: quest.hint,
+        id: quest.id
+      })
+      this.onPressButtonPlay()
+      this.props.toGamePlay()
     })
-    this.props.toGamePlay()
   }
 
+  onPressButtonPlay = () => {
+    if (song !== null) {
+      song.play(success => {
+        if (!success) {
+          console.log('error');
+        }
+      })
+    }
+  }
+
+  _toggleModal = () => {
+    this.setState({
+      isModalVisible: !this.state.isModalVisible
+    })
+  }
 
   render() {
     return (
@@ -45,40 +81,40 @@ export class RoomDetail extends Component {
         <Content padder style={{ padding: 4 }}>
           {
             this.props.quests.map((quest, i) => (
-            <Grid style={{ marginBottom: 20 }}>
-              <Col style={{ alignSelf:'center', width:110 }}>
-              <Thumbnail square large source={{uri: quest.image_path}} style={{ width: 100 }}/>
-              <ModalExample image={quest.image_path}/>
-              </Col>
-              <Col>
-                <Card key={i} style={{ backgroundColor: 'rgba(52,52,52,alpha)' }} >
-                  <CardItem
-                  style={{ backgroundColor: 'rgba(52,52,52,alpha)' }}
-                  header bordered button onPress={ () => this.onGameClick(quest) }>
-                    <Text style={{ fontFamily: 'futura', color: '#F1F1F4', fontWeight: '900' }}>{ quest.roomName }</Text>
-                  </CardItem>
-                  <CardItem
-                  style={{ backgroundColor: 'rgba(52,52,52,alpha)' }}
-                  bordered
-                  button onPress={ () => this.onGameClick(quest) }>
-                    <Body>
-                      <Text style={{ fontSize: 13, fontFamily: 'futura', color: '#D8D6E1', fontWeight: '500' }}>
-                        { quest.description }
-                      </Text>
-                    </Body>
-                  </CardItem>
-                  {/* <CardItem
-                  style={{ backgroundColor: 'rgba(52,52,52,alpha)' }}
-                  bordered>
-                    <Body>
+              <Grid style={{ marginBottom: 20 }}>
+                <Col style={{ alignSelf:'center', width:110 }}>
+                  <Thumbnail square large source={{uri: quest.image_path}} style={{ width: 100 }}/>
+                </Col>
+                <Col>
+                  <Card key={i} style={{ backgroundColor: 'rgba(52,52,52,alpha)' }} >
+                    <CardItem
+                      style={{ backgroundColor: 'rgba(52,52,52,alpha)' }}
+                      header bordered button onPress={ () => this.onGameClick(quest) }>
+                      <Text style={{ fontFamily: 'futura', color: '#F1F1F4', fontWeight: '900' }}>{ quest.roomName }</Text>
+                    </CardItem>
+                    <CardItem
+                      style={{ backgroundColor: 'rgba(52,52,52,alpha)' }}
+                      bordered
+                      button onPress={ () => this.onGameClick(quest) }>
+                      <Body>
+                        <Text style={{ fontSize: 13, fontFamily: 'futura', color: '#D8D6E1', fontWeight: '500' }}>
+                          { quest.description }
+                        </Text>
+                      </Body>
+                    </CardItem>
+                    <WinnerList winner={ quest.winner }/>
+                    {/* <CardItem
+                      style={{ backgroundColor: 'rgba(52,52,52,alpha)' }}
+                      bordered>
+                      <Body>
                       <Text style={{ fontFamily: 'futura', color: '#D8D6E1', fontWeight: '500' }}>
-                        { quest.hint }
+                      { quest.hint }
                       </Text>
-                    </Body>
-                  </CardItem> */}
-                </Card>
-              </Col>
-          </Grid>
+                      </Body>
+                      </CardItem> */}
+                    </Card>
+                  </Col>
+                </Grid>
             ))
           }
         </Content>
