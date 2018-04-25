@@ -1,10 +1,9 @@
 import React from 'react'
 import Enzyme, { shallow } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
-import sinon from 'sinon'
 
 import { Login } from '../src/screen/Login'
-import { Input } from 'native-base';
+import { Input, Text } from 'native-base';
 import { View, TouchableOpacity } from 'react-native'
 
 Enzyme.configure({ adapter: new Adapter() })
@@ -21,13 +20,17 @@ const authEmail = {
 }
 
 const navigation = {
-  navigate: ''
+  navigate: function() {}
 }
+
+const loginwithEmail = function () {}
 
 let wrapper;
 beforeEach(function() {
-  wrapper  = shallow( <Login authEmail={ authEmail } navigation={ navigation }/> )
+  mockFunction = jest.fn()
+  wrapper  = shallow( <Login press={mockFunction} authEmail={ authEmail } navigation={ navigation } loginwithEmail={loginwithEmail}/> )
 })
+
 describe('Login screen test', () => {
   it('renders without error', () => {
     expect(wrapper).toBeDefined()
@@ -80,9 +83,23 @@ describe('Login screen test', () => {
   })
 
   it('should invokes onSignIn method with email and password', () => {
-    console.log('lalalala')
     const signin = wrapper.find(TouchableOpacity).first()
-    console.log(signin)
+    const onSignIn = wrapper.instance().onSignIn()
+    wrapper.setState({email: 'new@mail.com'})
+    wrapper.setState({password: '123456'})
     signin.simulate('press')
+    // console.log(mockFunction)
+    // expect(mockFunction).toHaveBeenCalled()
+    // wrapper.instance().loginSuccess()
+  })
+
+  it('should invokes loginSucces when signin succeed', () => {
+    wrapper.instance().loginSuccess()
+  })
+
+  it('should simulate register button', () => {
+    const register = wrapper.find(Text).at(2)
+    register.simulate('press')
+    expect(register.props().children).toEqual('Register')
   })
 })

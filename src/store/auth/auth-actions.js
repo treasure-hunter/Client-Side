@@ -10,6 +10,7 @@ export const loginwithEmail = (email, password, cb) => {
       const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true)
       await AsyncStorage.setItem('idToken', idToken)
       dispatch(loginSucces(idToken))
+      return {user: user, idToken: idToken}
       cb()
     } catch (err) {
       dispatch(checkErr(err))
@@ -22,7 +23,7 @@ export const registerwithEmail = (username, email, password, cb) => {
   return async dispatch => {
     dispatch(loading())
     try {
-      await auth.createUserWithEmailAndPassword(email.trim().toLocaleLowerCase(), password)
+      const reg = await auth.createUserWithEmailAndPassword(email.trim().toLocaleLowerCase(), password)
       const user = auth.currentUser
       user.updateProfile({
         displayName: username
@@ -30,6 +31,7 @@ export const registerwithEmail = (username, email, password, cb) => {
       dispatch({
         type: REGISTER_SUCCESS
       })
+      return user
       cb()
     } catch (err) {
       dispatch(checkErr(err))
@@ -40,8 +42,9 @@ export const registerwithEmail = (username, email, password, cb) => {
 export const signOut = () => {
   return async dispatch => {
     try {
-      await auth.signOut()
-      await AsyncStorage.removeItem('idToken')
+      const logout = await auth.signOut()
+      const remove = await AsyncStorage.removeItem('idToken')
+      return {logout, remove}
     } catch (err) {
       console.log(err.message)
     }
@@ -61,7 +64,7 @@ function loading() {
   }
 }
 
-function checkErr(payload) {
+export function checkErr(payload) {
   return {
     type: CHECK_ERROR,
     payload
