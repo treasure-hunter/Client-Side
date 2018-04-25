@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { View, Image } from 'react-native'
-import LoginCard from '../components/LoginCard'
 import NewGame from '../components/NewGame'
 
 export default class Home extends Component {

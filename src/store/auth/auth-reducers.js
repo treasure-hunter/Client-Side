@@ -38,7 +38,8 @@ export const authEmail = (state= { ...initialState }, action) => {
         ...state,
         loading: false,
         error: true,
-        errorData: action.payload
+        errorData: action.payload,
+        status: false
       }
     default:
       return state;

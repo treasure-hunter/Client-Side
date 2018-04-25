@@ -15,7 +15,9 @@ export const fetchQuests = (state = { ...initialState, quests: [] }, action) => 
     case FETCH_QUESTS:
       return {
         ...state,
-        quests: action.payload
+        quests: action.payload,
+        loading: false,
+        error: false
       }
     case CHECK_ERROR:
       return {
