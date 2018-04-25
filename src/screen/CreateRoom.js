@@ -11,7 +11,8 @@ import { Container,
   Text,
   Right,
   Left,
-  Icon
+  Icon,
+  Spinner
 } from 'native-base';
 import { Grid, Col, Row } from 'react-native-easy-grid'
 import { auth } from '../firebase/index';
@@ -33,7 +34,8 @@ export class CreateRoom extends Component {
       image: '',
       hint: '',
       latitudeTrig: false,
-      longitudeTrig: false
+      longitudeTrig: false,
+      uploading: false
     }
   }
 
@@ -82,21 +84,43 @@ export class CreateRoom extends Component {
     })
   }
 
+  formValidation = () => {
+    let error = 0
+    Object.keys(this.state).forEach((key, i) => {
+      if (key !== 'latitudeTrig' && key !== 'longitudeTrig') {
+        if (this.state[key] === '') {
+          error++
+        }
+      }
+      if (key === 'latitudeTrig' || key === 'longitudeTrig') {
+        if (this.state[key] === null) {
+          error++
+        }
+      }
+    })
+    if (error > 0 ) {
+      Alert.alert('All data is required')
+    } else {
+      this.createRoom()
+    }
+  }
+
   createFormData = () => {
     let formData = new FormData()
-
     formData.append('roomName', this.state.roomName)
     formData.append('description', this.state.description)
     formData.append('hint', this.state.hint)
-    formData.append('image', this.state.image)
     formData.append('longitude', this.state.longitude)
     formData.append('latitude', this.state.latitude)
-
+    formData.append('image', this.state.image)
 
     return formData
   }
 
   createRoom = async () => {
+    this.setState({
+      uploading: true
+    })
     console.log('creating room...')
     let formData = this.createFormData()
     console.log('form>>>', formData)
@@ -163,90 +187,93 @@ export class CreateRoom extends Component {
             source={ require('../asset/bg_2.png')}
           />
         </View>
-        <Container>
-          <Content style={{ paddingHorizontal:20 }}>
-            <Form style={{ paddingVertical:20 }}>
-              <Item fixedLabel last rounded style={{ marginVertical:10, backgroundColor:'#B1AEC4', borderRadius: 10 }}>
-                <Label style={{ fontFamily: 'futura', fontWeight: '500' }}>Quest Name</Label>
-                <Input
-                autoCapitalize='none'
-                name="roomName"
-                value={ this.state.roomName }
-                onChangeText={(roomName) => this.setState({roomName}) }
-                />
-              </Item>
-              <Item fixedLabel last rounded style={{ marginVertical:10, backgroundColor:'#B1AEC4', borderRadius: 10 }}>
-                <Label style={{ fontFamily: 'futura', fontWeight: '500' }}>Description</Label>
-                <Input
-                autoCapitalize='none'
-                name="description"
-                value={ this.state.description }
-                onChangeText={(description) => this.setState({description}) }
-                />
-              </Item>
-              <Item fixedLabel last rounded style={{ marginVertical:10, backgroundColor:'#B1AEC4', borderRadius: 10 }}>
-                <Label style={{ fontFamily: 'futura', fontWeight: '500' }}>Hint</Label>
-                <Input
-                autoCapitalize='none'
-                name="description"
-                value={ this.state.hint }
-                onChangeText={(hint) => this.setState({hint}) }
-                />
-              </Item>
-              <Item fixedLabel last rounded style={{ marginVertical:10, backgroundColor:'#B1AEC4', borderRadius: 10 }}>
-                <Label style={{ fontFamily: 'futura', fontWeight: '500' }}>Longitude</Label>
-                {
-                  (this.state.longitudeTrig) ?
-                  <Text style={{ paddingVertical: 15, paddingRight: 20 }}>{ this.state.longitude }</Text> :
+          {
+            this.state.uploading ?
+            <Spinner color="white" />
+            :
+            <Content style={{ paddingHorizontal:20 }}>
+              <Form style={{ paddingVertical:20 }}>
+                <Item fixedLabel last rounded style={{ marginVertical:10, backgroundColor:'#B1AEC4', borderRadius: 10 }}>
+                  <Label style={{ fontFamily: 'futura', fontWeight: '500' }}>Quest Name</Label>
                   <Input
-                  editable={ false }
-                  autoCapitalize='none'
-                  name="longitude"
-                  value={ this.state.longitude }
-                  onChangeText={(longitude) => this.setState({longitude}) }
-                  />
-                }
-              </Item>
-              <Item fixedLabel last rounded style={{ marginVertical:10, backgroundColor:'#B1AEC4', borderRadius: 10 }}>
-                <Label style={{ fontFamily: 'futura', fontWeight: '500' }}>Latitude</Label>
-                {
-                  (this.state.latitudeTrig) ?
-                  <Text style={{ paddingVertical: 15, paddingRight: 20 }}>{ this.state.latitude }</Text> :
+                    autoCapitalize='none'
+                    name="roomName"
+                    value={ this.state.roomName }
+                    onChangeText={(roomName) => this.setState({roomName}) }
+                    />
+                </Item>
+                <Item fixedLabel last rounded style={{ marginVertical:10, backgroundColor:'#B1AEC4', borderRadius: 10 }}>
+                  <Label style={{ fontFamily: 'futura', fontWeight: '500' }}>Description</Label>
                   <Input
-                  editable={ false }
-                  autoCapitalize='none'
-                  name="latitude"
-                  value={ this.state.latitude }
-                  onChangeText={(latitude) => this.setState({latitude}) }/>
-                }
-              </Item>
-            </Form>
-              <TouchableOpacity
-              rounded
-              info
-              style={{ marginVertical: 5, paddingVertical: 10, alignSelf:'center', width: '50%', borderRadius: 10, backgroundColor: '#F1F1F4', alignItems: 'center' }}
-              onPress={ () => this.getGeolocation() }>
-                <Icon name='ios-locate' />
-                <Text style={{ fontFamily: 'futura', fontWeight: 'bold', color: '#3E073E', textAlign: 'center' }}>Get Location</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-              rounded
-              info
-              style={{ marginVertical: 5, paddingVertical: 10, alignSelf:'center', width: '50%', borderRadius: 10, backgroundColor: '#F1F1F4', alignItems: 'center' }}
-              onPress={ () => this.selectPhotoTapped() }>
-                <Icon name='ios-camera' />
-              </TouchableOpacity>
-              { this.state.latitudeTrig && this.state.longitudeTrig &&
-                <TouchableOpacity
-                rounded
-                success
-                style={{ marginVertical: 5, paddingVertical: 10, alignSelf:'center', width: '50%', borderRadius: 10, backgroundColor: '#F1F1F4', alignItems: 'center' }}
-                onPress={ () => this.createRoom() }>
-                  <Text style={{ fontFamily: 'futura', fontWeight: 'bold', color: '#3E073E', textAlign: 'center' }}>Create</Text>
-                </TouchableOpacity>
-              }
-          </Content>
-        </Container>
+                    autoCapitalize='none'
+                    name="description"
+                    value={ this.state.description }
+                    onChangeText={(description) => this.setState({description}) }
+                    />
+                </Item>
+                <Item fixedLabel last rounded style={{ marginVertical:10, backgroundColor:'#B1AEC4', borderRadius: 10 }}>
+                  <Label style={{ fontFamily: 'futura', fontWeight: '500' }}>Hint</Label>
+                  <Input
+                    autoCapitalize='none'
+                    name="description"
+                    value={ this.state.hint }
+                    onChangeText={(hint) => this.setState({hint}) }
+                    />
+                </Item>
+                <Item fixedLabel last rounded style={{ marginVertical:10, backgroundColor:'#B1AEC4', borderRadius: 10 }}>
+                  <Label style={{ fontFamily: 'futura', fontWeight: '500' }}>Longitude</Label>
+                  {
+                    (this.state.longitudeTrig) ?
+                    <Text style={{ paddingVertical: 15, paddingRight: 20 }}>{ this.state.longitude }</Text> :
+                      <Input
+                        editable={ false }
+                        autoCapitalize='none'
+                        name="longitude"
+                        value={ this.state.longitude }
+                        onChangeText={(longitude) => this.setState({longitude}) }
+                        />
+                    }
+                  </Item>
+                  <Item fixedLabel last rounded style={{ marginVertical:10, backgroundColor:'#B1AEC4', borderRadius: 10 }}>
+                    <Label style={{ fontFamily: 'futura', fontWeight: '500' }}>Latitude</Label>
+                    {
+                      (this.state.latitudeTrig) ?
+                      <Text style={{ paddingVertical: 15, paddingRight: 20 }}>{ this.state.latitude }</Text> :
+                        <Input
+                          editable={ false }
+                          autoCapitalize='none'
+                          name="latitude"
+                          value={ this.state.latitude }
+                          onChangeText={(latitude) => this.setState({latitude}) }/>
+                      }
+                    </Item>
+                  </Form>
+                  <TouchableOpacity
+                    rounded
+                    info
+                    style={{ marginVertical: 5, paddingVertical: 10, alignSelf:'center', width: '50%', borderRadius: 10, backgroundColor: '#F1F1F4', alignItems: 'center' }}
+                    onPress={ () => this.getGeolocation() }>
+                    <Icon name='ios-locate' />
+                    <Text style={{ fontFamily: 'futura', fontWeight: 'bold', color: '#3E073E', textAlign: 'center' }}>Get Location</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    rounded
+                    info
+                    style={{ marginVertical: 5, paddingVertical: 10, alignSelf:'center', width: '50%', borderRadius: 10, backgroundColor: '#F1F1F4', alignItems: 'center' }}
+                    onPress={ () => this.selectPhotoTapped() }>
+                    <Icon name='ios-camera' />
+                  </TouchableOpacity>
+                  { this.state.latitudeTrig && this.state.longitudeTrig && this.state.image &&
+                    <TouchableOpacity
+                      rounded
+                      success
+                      style={{ marginVertical: 5, paddingVertical: 10, alignSelf:'center', width: '50%', borderRadius: 10, backgroundColor: '#F1F1F4', alignItems: 'center' }}
+                      onPress={ () => this.formValidation() }>
+                      <Text style={{ fontFamily: 'futura', fontWeight: 'bold', color: '#3E073E', textAlign: 'center' }}>Create</Text>
+                    </TouchableOpacity>
+                  }
+                </Content>
+          }
       </View>
     );
   }
