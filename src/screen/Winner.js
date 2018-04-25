@@ -25,7 +25,7 @@ export default class Winner extends Component {
           />
         </View>
         <Image source={ require("../asset/winner.png") } style={{ width: 200, height: 220, alignSelf: 'center' }} />
-        <Text style={{ fontSize: 40, fontFamily:'futura' ,color:'', alignSelf:'center', textAlign:'center' }}> Congrats you have won!!! </Text>
+        <Text style={{ fontSize: 40, fontFamily:'futura', alignSelf:'center', textAlign:'center' }}> Congrats you have won!!! </Text>
         <TouchableOpacity
           rounded
           success

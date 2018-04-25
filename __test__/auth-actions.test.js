@@ -33,7 +33,7 @@ describe('auth with email password actions test', () => {
   })
 
   it('should handle register when succeed', async () => {
-    const res = await store.dispatch(registerwithEmail('qwerte', 'qwerte@mail.com', '123456', () => {}))
+    const res = await store.dispatch(registerwithEmail('jajaja', 'jajaja@mail.com', '123456', () => {}))
     const actions = store.getActions()
 
     expect(res).toBeDefined()

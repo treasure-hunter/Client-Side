@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1524662581287" clover="3.2.0">
-  <project timestamp="1524662581287" name="All files">
-    <metrics statements="249" coveredstatements="128" conditionals="63" coveredconditionals="20" methods="106" coveredmethods="41" elements="418" coveredelements="189" complexity="0" loc="249" ncloc="249" packages="10" files="23" classes="23">
+<coverage generated="1524663676842" clover="3.2.0">
+  <project timestamp="1524663676842" name="All files">
+    <metrics statements="251" coveredstatements="133" conditionals="63" coveredconditionals="20" methods="106" coveredmethods="43" elements="420" coveredelements="196" complexity="0" loc="251" ncloc="251" packages="10" files="25" classes="25">
       <package name="carta">
         <metrics statements="8" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
         <file name="App.js" path="/Users/hacktiv8/Documents/final-project/carta/App.js">
@@ -23,7 +23,7 @@
         </file>
       </package>
       <package name="carta.src.asset">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <file name="Logov2.png" path="/Users/hacktiv8/Documents/final-project/carta/src/asset/Logov2.png">
           <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
           <line num="1" count="2" type="stmt"/>
@@ -31,6 +31,14 @@
         <file name="bg_2.png" path="/Users/hacktiv8/Documents/final-project/carta/src/asset/bg_2.png">
           <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
           <line num="1" count="3" type="stmt"/>
+        </file>
+        <file name="bg_compass.png" path="/Users/hacktiv8/Documents/final-project/carta/src/asset/bg_compass.png">
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="1" count="1" type="stmt"/>
+        </file>
+        <file name="winner.png" path="/Users/hacktiv8/Documents/final-project/carta/src/asset/winner.png">
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="1" count="1" type="stmt"/>
         </file>
       </package>
       <package name="carta.src.components">
@@ -77,7 +85,7 @@
         </file>
       </package>
       <package name="carta.src.screen">
-        <metrics statements="119" coveredstatements="28" conditionals="42" coveredconditionals="3" methods="59" coveredmethods="13"/>
+        <metrics statements="119" coveredstatements="31" conditionals="42" coveredconditionals="3" methods="59" coveredmethods="15"/>
         <file name="ARScene2.js" path="/Users/hacktiv8/Documents/final-project/carta/src/screen/ARScene2.js">
           <metrics statements="13" coveredstatements="4" conditionals="4" coveredconditionals="0" methods="8" coveredmethods="0"/>
           <line num="27" count="1" type="stmt"/>
@@ -213,10 +221,10 @@
           <line num="18" count="0" type="stmt"/>
         </file>
         <file name="Winner.js" path="/Users/hacktiv8/Documents/final-project/carta/src/screen/Winner.js">
-          <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-          <line num="6" count="0" type="stmt"/>
-          <line num="7" count="0" type="stmt"/>
-          <line num="33" count="0" type="stmt"/>
+          <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+          <line num="6" count="4" type="stmt"/>
+          <line num="7" count="4" type="stmt"/>
+          <line num="33" count="1" type="stmt"/>
         </file>
       </package>
       <package name="carta.src.store">
